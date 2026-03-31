@@ -5,7 +5,6 @@ const FeatureTabs = () => {
   const [activeTab, setActiveTab] = useState("Home");
 
 
-  // testing
   return (
     <section className="relative overflow-hidden">
       <div className="w-full relative z-10">
