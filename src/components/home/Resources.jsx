@@ -81,7 +81,7 @@ const Resources = () => {
   }, [groupWidth]);
 
   useEffect(() => {
-    return x.onChange((latest) => {
+    const unsub = x.on("change", (latest) => {
       setCurrentX(latest);
     });
   }, [x]);

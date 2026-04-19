@@ -96,7 +96,7 @@ const LatestNews = () => {
 
   // Handle wraparound logic for the motion value to keep it in a manageable range
   useEffect(() => {
-    const unsub = x.onChange((latest) => {
+    const unsub = x.on("change", (latest) => {
       if (latest <= -trackWidth * 2) {
         x.set(latest + trackWidth);
       } else if (latest >= 0) {

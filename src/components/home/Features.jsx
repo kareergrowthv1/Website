@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { MoveRight, Check, X, ChevronRight, ArrowRight } from 'lucide-react';
 
 // Import assets
@@ -119,7 +120,7 @@ const NewsMarquee = ({ data = recruitmentNews }) => {
   }, [isHovered, trackWidth]);
 
   useEffect(() => {
-    const unsub = x.onChange((latest) => {
+    const unsub = x.on("change", (latest) => {
       if (latest <= -trackWidth * 2) {
         x.set(latest + trackWidth);
       } else if (latest >= 0) {
@@ -376,13 +377,12 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
             <p className="text-sm md:text-[17px] font-medium text-perk-black/80 max-w-4xl mb-6 leading-relaxed">
               KareerGrowth is the complete vetting engine for today's recruiters, colleges, and candidates. Our human-like AI interviewers conduct four rounds of smart assessments 24/7, providing high-precision data and deep-competency analytics. We simplify the entire hiring journey by removing the manual work and keeping the process fair with institutional-grade security. Whether you are hiring top talent, managing campus placements, or starting your career, KareerGrowth makes the path faster, fairer, and much more intelligent.
             </p>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Link 
+              to="/product"
               className="group banner-lime text-perk-black px-8 py-3 rounded-full font-bold text-sm flex items-center gap-2 mb-8 transition-all shadow-md hover:shadow-xl"
             >
               Discover our product <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </Link>
 
             {/* Persona Navigation Pills */}
             <div className="relative flex items-center bg-white p-1.5 rounded-full border border-black/5 shadow-sm mb-4">

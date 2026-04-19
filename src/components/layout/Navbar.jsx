@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, User, ChevronDown, Sparkles, MoveRight } from 'lucide-react';
 import Button from '../ui/Button';
 
@@ -7,6 +8,7 @@ const Navbar = () => {
   const [isBannerVisible, setIsBannerVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +19,18 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Recruitment', href: '#recruitment' },
-    { name: 'Institute', href: '#institute' },
-    { name: 'Stories', href: '#candidates' },
-    { name: 'Insights', href: '#news' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#recruitment' },
+    { name: 'Stories', href: '/#candidates' },
+    { name: 'Insights', href: '/#news' },
   ];
+
+  const handleNavLinkClick = (href) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith('/#') && location.pathname !== '/') {
+      // Navigation will be handled by the Link component
+    }
+  };
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center">
@@ -34,9 +43,9 @@ const Navbar = () => {
             exit={{ height: 0, opacity: 0 }}
             className="w-full banner-lime px-4 py-2.5 flex items-center justify-between text-center"
           >
-            <div className="flex-grow flex items-center justify-center gap-4 text-xs md:text-sm font-medium">
+            <div className="flex-grow flex items-center justify-center gap-4 text-xs md:text-sm font-medium text-perk-black">
               <span>Focus on your next hire. We'll handle the recruitment friction.</span>
-              <a href="#recruitment" className="underline font-bold">Learn more</a>
+              <Link to="/product" className="underline font-bold">Discover our product</Link>
             </div>
             <button
               onClick={() => setIsBannerVisible(false)}
@@ -61,36 +70,36 @@ const Navbar = () => {
       >
         <div className="max-w-[1440px] mx-auto flex items-center justify-between px-2 md:px-4">
 
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="text-2xl font-black tracking-tighter text-perk-black flex items-center">
               KareerGrowth
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-[13px] font-bold text-perk-black hover:opacity-100 opacity-80 transition-opacity"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-4">
-            <button className="text-sm font-bold flex items-center gap-1.5 hover:opacity-70 transition-opacity mr-2">
+            <button className="text-sm font-bold flex items-center gap-1.5 hover:opacity-70 transition-opacity mr-2 text-perk-black">
               <Globe size={14} className="opacity-60" /> <ChevronDown size={14} className="opacity-40" />
             </button>
             <button className="bg-primary text-perk-black px-6 py-2.5 rounded-full text-[13px] font-bold border border-perk-black/5 flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
               Book a demo <MoveRight size={14} />
             </button>
-            <button className="bg-white text-perk-black px-6 py-2.5 rounded-full text-[13px] font-bold border border-perk-black shadow-sm flex items-center gap-2 hover:bg-slate-50 transition-colors">
+            <Link to="/product" className="bg-white text-perk-black px-6 py-2.5 rounded-full text-[13px] font-bold border border-perk-black shadow-sm flex items-center gap-2 hover:bg-slate-50 transition-colors">
               Get started <MoveRight size={14} />
-            </button>
+            </Link>
             
             <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-slate-200 cursor-pointer transition-colors ml-2">
                <User size={18} />
@@ -128,17 +137,18 @@ const Navbar = () => {
             >
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="text-lg font-bold text-perk-black px-2 hover:bg-black/5 py-2 rounded-xl transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
                 <div className="grid grid-cols-1 gap-3 pt-4 px-2">
                   <Button variant="primary" className="w-full">Book a demo</Button>
-                  <Button variant="outline" className="w-full bg-white">Get started</Button>
+                  <Link to="/product" onClick={() => setIsMobileMenuOpen(false)} className="bg-white text-perk-black px-6 py-2.5 rounded-full text-[13px] font-bold border border-perk-black flex items-center justify-center gap-2">Get started <MoveRight size={14} /></Link>
                 </div>
               </div>
             </motion.div>
