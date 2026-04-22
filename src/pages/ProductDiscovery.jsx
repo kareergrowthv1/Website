@@ -16,7 +16,7 @@ const ProductDiscovery = () => {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-[100px] font-bold text-perk-black mb-10 tracking-tight leading-[0.9]"
           >
-            Get down to business with the power of one platform
+            Get down to business with the power of one platform 
           </motion.h1>
           
           <motion.p 
