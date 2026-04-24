@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
+import { motion, useAnimation, useMotionValue } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { MoveRight, Check, X, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import { productFeatures } from '../../data/productFeatures';
 
 // Import assets
 const suitcaseImg = '/Users/ifocus/.gemini/antigravity/brain/b9dd75a1-1b4d-45ff-8f1f-ed0567981784/suitcase_trip_3d_1776586948568.png';
@@ -231,140 +232,149 @@ const NewsMarquee = ({ data = recruitmentNews }) => {
   );
 };
 
+// ─── Infinite one-direction card marquee ─────────────────────────────────────
+const FeatureMarquee = ({ cards, trackWidth, cardW, gap }) => {
+  const controls = useAnimation();
+  const x = useMotionValue(0);
+  const [hovered, setHovered] = useState(false);
+
+  const startAnim = () => {
+    controls.start({
+      x: [x.get(), x.get() - trackWidth],
+      transition: { duration: cards.length * 3, ease: 'linear', repeat: Infinity },
+    });
+  };
+
+  useEffect(() => {
+    if (!hovered) startAnim(); else controls.stop();
+    return () => controls.stop();
+  }, [hovered, trackWidth]);
+
+  // Seamless loop reset
+  useEffect(() => {
+    const unsub = x.on('change', (latest) => {
+      if (latest <= -trackWidth * 2) x.set(latest + trackWidth);
+      else if (latest >= 0) x.set(latest - trackWidth);
+    });
+    return () => unsub();
+  }, [trackWidth]);
+
+  return (
+    <div
+      className="w-full overflow-hidden py-6"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <motion.div
+        style={{ x }}
+        animate={controls}
+        className="flex"
+        style={{ gap: `${gap}px`, width: 'max-content', x }}
+      >
+        {cards.map((card, idx) => (
+          <div
+            key={idx}
+            className="flex-shrink-0 rounded-[1.75rem] overflow-hidden bg-[#f0f0e8] border border-black/5 group cursor-pointer"
+            style={{ width: `${cardW}px`, height: '480px' }}
+          >
+            {/* Image */}
+            <div className="relative overflow-hidden" style={{ height: '55%' }}>
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm">
+                {card.tag}
+              </div>
+            </div>
+            {/* Content */}
+            <div className="p-6 flex flex-col" style={{ height: '45%' }}>
+              <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">{card.title}</h3>
+              <p className="text-[12px] text-perk-black/60 font-medium leading-relaxed line-clamp-3 mb-auto">{card.desc}</p>
+              <button className="mt-3 flex items-center gap-1.5 font-bold text-xs border border-perk-black/10 px-4 py-1.5 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all">
+                Learn more <ChevronRight size={12} />
+              </button>
+            </div>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
 const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro = false }) => {
+
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef(null);
 
-  const tabContent = {
-    Recruitment: {
-      headline: "Automate your entire hiring funnel",
-      subtext: "From screening to final vetting, KareerGrowth handles the heavy lifting so you can focus on the best talent.",
-      cards: [
-        {
-          type: 'image',
-          title: 'Institutional-grade AI Proctoring',
-          desc: 'Ensure 100% integrity in every assessment. Our AI monitors hundreds of signals to prevent cheating and ensure a fair playing field for all candidates.',
-          image: fieldEngineerImg
-        },
-        {
-          type: 'list',
-          title: 'Automated Round Coordination',
-          desc: 'No more manual scheduling. KareerGrowth automatically moves candidates through four rounds of vetting based on their competency scores.',
-          items: [
-            { icon: <Check size={14} className="text-emerald-500" />, label: 'Aptitude Round', action: <ArrowRight size={14} className="text-slate-400" /> },
-            { icon: <Check size={14} className="text-emerald-500" />, label: 'Technical Quiz', value: 'Passed' },
-            { icon: <div className="w-4 h-4 rounded-full bg-slate-900 border-2 border-white" />, label: 'AI Video Interview', value: 'Scheduled' }
-          ]
-        },
-        {
-          type: 'plain',
-          title: 'Deep Competency Analytics',
-          desc: 'Get a clear picture of every candidate. Our engine extracts deep insights into technical skills, communication, and problem-solving abilities.',
-        },
-        {
-          type: 'status',
-          header: 'Funnel Stats',
-          title: 'Real-time Candidate Tracking',
-          desc: 'Monitor your entire hiring pipeline in one place. See who is excelling, who needs more time, and who the top-tier fits are for your specific roles.',
-          avatars: [
-            { id: 'JD', color: 'bg-sky-200', status: 'check' },
-            { id: 'AM', color: 'bg-orange-200', status: 'check' },
-            { id: 'SJ', color: 'bg-indigo-200', status: 'x' },
-            { id: 'RK', color: 'bg-pink-200', status: 'check' },
-          ]
-        },
-        {
-          type: 'accent',
-          title: 'Human-like AI Interviews',
-          desc: 'Our AI interviewers run 24/7, providing a comfortable yet intensive experience for candidates to showcase their actual potential.',
-          image: suitcaseImg,
-          bgColor: 'bg-brand-lime'
-        },
-        {
-          type: 'image',
-          title: 'Comprehensive Talent Insights',
-          desc: 'Data-driven hiring decisions made simple. We provide clear, actionable reports on every candidate that passes through the machine.',
-          image: engineerImg
-        }
-      ]
-    },
-    Institute: {
-      headline: "Scale your campus placements",
-      subtext: "Unified tracking and industry-grade proctoring for every student in your institution.",
-      cards: [
-        {
-          type: 'plain',
-          title: 'Centralized Placement Dashboard',
-          desc: 'Gain bird-eye visibility into your entire placement season. Track company visits, student applications, and offer ratios in real-time.',
-        },
-        {
-          type: 'image',
-          title: 'Massive Batch Vetting',
-          desc: 'Assess thousands of students simultaneously without infrastructure headaches. Our cloud-scale engine handles heavy loads with 99.9% reliability.',
-          image: fieldEngineerImg
-        },
-        {
-          type: 'accent',
-          title: 'AI Proctoring for Institutions',
-          desc: 'Ensure university-level integrity with our advanced proctoring suite, specifically designed for large-scale campus environments.',
-          image: suitcaseImg,
-          bgColor: 'bg-brand-lime'
-        },
-        {
-          type: 'status',
-          header: 'Batch Performance',
-          title: 'Industry Readiness Scoring',
-          desc: 'Get detailed reports on which students are ready for which industries, allowing for more strategic placement coordination.',
-          avatars: [
-            { id: 'CS', color: 'bg-sky-200', status: 'check' },
-            { id: 'EE', color: 'bg-orange-200', status: 'check' },
-            { id: 'ME', color: 'bg-indigo-200', status: 'check' },
-            { id: 'IT', color: 'bg-pink-200', status: 'check' },
-          ]
-        }
-      ] 
-    }
+  // Map persona prop to productFeatures tag
+  const tagMap = { Recruitment: 'Recruiters', Institute: 'Institutes', Candidates: 'Candidates' };
+  const tag = tagMap[persona] || 'Recruiters';
+
+  const headlines = {
+    Recruitment: { headline: 'Automate your entire hiring funnel', subtext: 'From screening to final vetting, KareerGrowth handles the heavy lifting so you can focus on the best talent.' },
+    Institute:   { headline: 'Scale your campus placements',       subtext: 'Unified tracking and industry-grade proctoring for every student in your institution.' },
+    Candidates:  { headline: 'Accelerate your career',             subtext: 'Smart matching, verified profiles, and skill-building tools — all in one place.' },
   };
 
-  const currentContent = tabContent[persona] || tabContent.Recruitment;
+  const { headline, subtext } = headlines[persona] || headlines.Recruitment;
+  const cards = productFeatures.filter(f => f.tag === tag);
 
-  // Auto-sliding logic
+  // Doubled cards for seamless circular loop
+  const loopCards = [...cards, ...cards];
+
+  // Auto-advance every 3 seconds — always forward
   useEffect(() => {
-    const timer = setInterval(() => {
-      scroll('next');
-    }, 4000);
+    const timer = setInterval(() => scroll('next'), 3000);
     return () => clearInterval(timer);
   }, [activeIndex, persona]);
 
   const scroll = (direction) => {
-    if (!scrollRef.current) return;
-    const cards = currentContent.cards;
-    if (cards.length === 0) return;
-
-    let next;
-    if (direction === 'next') {
-      next = (activeIndex + 1) % cards.length;
-    } else {
-      next = (activeIndex - 1 + cards.length) % cards.length;
-    }
-    
+    if (!scrollRef.current || cards.length === 0) return;
     const cardWidth = window.innerWidth < 768 ? 280 : 380;
     const gap = 16;
     
-    scrollRef.current.scrollTo({
-      left: next * (cardWidth + gap),
-      behavior: 'smooth'
-    });
-    setActiveIndex(next);
+    if (direction === 'next') {
+      const nextIndex = activeIndex + 1;
+      
+      // Animate forward
+      scrollRef.current.scrollTo({ left: nextIndex * (cardWidth + gap), behavior: 'smooth' });
+      setActiveIndex(nextIndex % cards.length);
+      
+      // If we just scrolled to the start of the second set, jump back silently after animation
+      if (nextIndex >= cards.length) {
+        setTimeout(() => {
+          if (scrollRef.current) {
+            scrollRef.current.scrollTo({ left: 0, behavior: 'auto' });
+          }
+        }, 600); // 600ms to match smooth scroll duration
+      }
+    } else {
+      let prevIndex = activeIndex - 1;
+      
+      if (prevIndex < 0) {
+        // Jump to the end of the first set (silently) then animate back to N-1
+        scrollRef.current.scrollTo({ left: cards.length * (cardWidth + gap), behavior: 'auto' });
+        prevIndex = cards.length - 1;
+      }
+      
+      setTimeout(() => {
+        scrollRef.current?.scrollTo({ left: prevIndex * (cardWidth + gap), behavior: 'smooth' });
+      }, 20);
+      setActiveIndex(prevIndex);
+    }
   };
 
   const handleScroll = () => {
     if (scrollRef.current) {
       const { scrollLeft } = scrollRef.current;
       const cardWidth = window.innerWidth < 768 ? 280 : 380;
-      const index = Math.round(scrollLeft / (cardWidth + 16)); 
+      const index = Math.round(scrollLeft / (cardWidth + 16));
       if (index !== activeIndex) {
-        setActiveIndex(index);
+        setActiveIndex(index % cards.length);
       }
     }
   };
@@ -424,7 +434,7 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
             viewport={{ once: true }}
             className="text-5xl md:text-7xl font-bold text-perk-black mb-6 tracking-tight"
           >
-            {currentContent.headline}
+            {headline}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -433,174 +443,78 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
             transition={{ delay: 0.1 }}
             className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto"
           >
-            {currentContent.subtext}
+            {subtext}
           </motion.p>
         </div>
       </div>
 
-      {/* Cards Slider - Restored to Standard Scroll */}
+      {/* Cards Slider */}
       <div className="w-full relative py-4 mb-2">
-        <div 
+        <div
           ref={scrollRef}
           onScroll={handleScroll}
           className="flex overflow-x-auto gap-4 scrollbar-hide snap-x snap-mandatory px-6 md:px-[calc((100vw-1200px)/2)] lg:px-[calc((100vw-1440px)/2)] pb-4"
           style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
         >
-          {currentContent.cards.map((card, idx) => (
+          {loopCards.map((card, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className={`flex-shrink-0 w-[280px] md:w-[380px] h-[520px] rounded-[1.75rem] overflow-hidden snap-center relative ${card.bgColor || 'bg-white border border-black/[0.03]'}`}
+              transition={{ delay: (idx % cards.length) * 0.1 }}
+              className="flex-shrink-0 w-[280px] md:w-[380px] h-[520px] rounded-[1.75rem] overflow-hidden snap-center relative bg-[#f0f0e8] border border-black/5 group"
             >
-              {/* Card Type Logic */}
-              {card.type === 'status' && (
-                <div className="p-8 h-full flex flex-col">
-                  <div className="bg-[#f8f6f0] rounded-2xl p-6 mb-8 border border-black/[0.02]">
-                      <div className="text-[9px] font-bold text-slate-400 mb-5 tracking-[0.2em] uppercase">{card.header}</div>
-                      <div className="flex gap-3">
-                        {card.avatars.map((av, index) => (
-                          <div key={index} className="relative group">
-                              <div className={`w-11 h-11 rounded-full ${av.color} flex items-center justify-center font-bold text-perk-black text-xs border-2 border-white shadow-sm`}>
-                                {av.id}
-                              </div>
-                              <div className={`absolute -bottom-1 -right-1 w-4.5 h-4.5 rounded-full flex items-center justify-center border-2 border-white shadow-sm ${av.status === 'check' ? 'bg-emerald-400' : 'bg-red-400'}`}>
-                                {av.status === 'check' ? <Check size={8} className="text-white" /> : <X size={8} className="text-white" />}
-                              </div>
-                          </div>
-                        ))}
-                      </div>
-                  </div>
-                  <h3 className="text-2xl font-bold text-perk-black mb-5 leading-[1.2]">{card.title}</h3>
-                  <p className="text-slate-500 font-medium mb-auto leading-relaxed text-sm">{card.desc}</p>
-                  <button className="flex items-center gap-2 font-bold text-xs border border-perk-black/10 px-5 py-2 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group">
-                      Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              )}
-
-              {card.type === 'list' && (
-                <div className="p-8 h-full flex flex-col">
-                  <div className="flex flex-col gap-2.5 mb-8">
-                      {card.items.map((item, index) => (
-                        <div key={index} className="bg-[#f8f6f0] rounded-xl p-3.5 flex items-center justify-between border border-black/[0.02]">
-                            <div className="flex items-center gap-3">
-                              <div className="w-9 h-9 rounded-lg bg-white flex items-center justify-center">
-                                  {item.icon}
-                              </div>
-                              <span className="text-xs font-bold text-perk-black">{item.label}</span>
-                            </div>
-                            {item.value && <span className="text-xs font-bold text-slate-400">{item.value}</span>}
-                            {item.action && <div className="">{item.action}</div>}
-                        </div>
-                      ))}
-                  </div>
-                  <h3 className="text-2xl font-bold text-perk-black mb-5 leading-[1.2]">{card.title}</h3>
-                  <p className="text-slate-500 font-medium mb-auto leading-relaxed text-sm">{card.desc}</p>
-                  <button className="flex items-center gap-2 font-bold text-xs border border-perk-black/10 px-5 py-2 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group">
-                      Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              )}
-
-              {card.type === 'plain' && (
-                <div className="p-8 h-full flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-bold text-perk-black mb-6 leading-[1.1]">{card.title}</h3>
-                  <p className="text-slate-500 font-medium text-base leading-relaxed mb-10">{card.desc}</p>
-                  <button className="flex items-center gap-2 font-bold text-xs border border-perk-black/10 px-5 py-2 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group">
-                      Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              )}
-
-              {card.type === 'accent' && (
-                <div className="h-full flex flex-col">
-                  <div className="h-[42%] flex items-center justify-center p-6 overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
-                      <motion.img 
-                        whileHover={{ scale: 1.1, rotate: -2 }}
-                        src={card.image} 
-                        alt="featured" 
-                        className="w-[100%] h-auto drop-shadow-xl"
-                      />
-                  </div>
-                  <div className="p-8 pt-2 flex flex-col h-[58%]">
-                      <h3 className="text-2xl font-bold text-perk-black mb-5 leading-[1.2]">{card.title}</h3>
-                      <p className="text-perk-black/70 font-medium mb-auto leading-relaxed text-sm">{card.desc}</p>
-                      <button className="flex items-center gap-2 font-bold text-xs border border-perk-black/10 px-5 py-2 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group">
-                        Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                  </div>
-                </div>
-              )}
-
-              {card.type === 'image' && (
-                <div className="h-full flex flex-col relative group">
-                  <img src={card.image} alt="" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2.5s]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end text-white text-left">
-                      <h3 className="text-2xl font-bold mb-5 leading-[1.2]">{card.title}</h3>
-                      <p className="text-white/80 font-medium mb-6 leading-relaxed text-xs md:text-sm line-clamp-3">{card.desc}</p>
-                      <button className="flex items-center gap-2 font-bold text-xs border border-white/20 px-5 py-2 rounded-full w-fit hover:bg-white hover:text-black transition-all group">
-                        Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </button>
-                  </div>
-                </div>
-              )}
+              <div className="relative h-[55%] overflow-hidden">
+                <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2.5s]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm">{card.tag}</div>
+              </div>
+              <div className="p-6 flex flex-col h-[45%]">
+                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">{card.title}</h3>
+                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-auto line-clamp-4">{card.desc}</p>
+                <button className="flex items-center gap-2 font-bold text-xs border border-perk-black/10 px-5 py-2 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group mt-3">
+                  Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* High-Fidelity Slider Navigation */}
-        <div className="max-w-[1440px] mx-auto px-6 mt-12 pb-12">
-          <div className="flex flex-col items-center">
-            {/* Control Bar */}
-            <div className="grid grid-cols-1 md:grid-cols-3 items-center w-full">
-              
-              <div className="hidden md:block"></div>
+        {/* Controls Bar */}
+        <div className="max-w-[1440px] mx-auto px-6 mt-10 pb-12 relative flex items-center">
+          {/* Centered Dots */}
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
+            {cards.map((_, i) => (
+              <motion.div
+                key={i}
+                onClick={() => {
+                  const cardWidth = window.innerWidth < 768 ? 280 : 380;
+                  scrollRef.current.scrollTo({ left: i * (cardWidth + 16), behavior: 'smooth' });
+                  setActiveIndex(i);
+                }}
+                animate={{
+                  width: i === activeIndex ? 36 : 8,
+                  backgroundColor: i === activeIndex ? '#1a1a1a' : '#d1d1d1',
+                }}
+                className="h-2 rounded-full cursor-pointer"
+              />
+            ))}
+          </div>
 
-              {/* Pagination Dots */}
-              <div className="flex justify-center items-center gap-3">
-                {currentContent.cards.map((_, i) => (
-                  <motion.div
-                    key={i}
-                    onClick={() => {
-                        const cardWidth = window.innerWidth < 768 ? 280 : 380;
-                        scrollRef.current.scrollTo({ left: i * (cardWidth + 16), behavior: 'smooth' });
-                        setActiveIndex(i);
-                    }}
-                    animate={{ 
-                        width: i === activeIndex ? 36 : 8,
-                        backgroundColor: i === activeIndex ? '#1a1a1a' : '#d1d1d1'
-                    }}
-                    className="h-2 rounded-full cursor-pointer transition-all duration-300"
-                  />
-                ))}
-              </div>
-
-              {/* Navigation & Action */}
-              <div className="flex items-center justify-end gap-3 md:gap-4 ml-auto md:ml-0">
-                <div className="flex items-center gap-2">
-                  <button 
-                    onClick={() => scroll('prev')} 
-                    className="w-10 h-10 md:w-11 md:h-11 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm"
-                  >
-                    <ChevronRight size={18} className="rotate-180" />
-                  </button>
-                  <button 
-                    onClick={() => scroll('next')} 
-                    className="w-10 h-10 md:w-11 md:h-11 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm"
-                  >
-                    <ChevronRight size={18} />
-                  </button>
-                </div>
-
-                <button className="hidden sm:flex items-center gap-2 font-bold text-[13px] md:text-[14px] border border-black/10 px-6 md:px-8 py-2 md:py-2.5 rounded-full hover:bg-black hover:text-white transition-all shadow-sm group">
-                  Show all features <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+          {/* Right-aligned Arrows + Show all */}
+          <div className="ml-auto flex items-center gap-6">
+            <div className="flex items-center gap-2">
+              <button onClick={() => scroll('prev')} className="w-11 h-11 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm">
+                <ChevronRight size={18} className="rotate-180" />
+              </button>
+              <button onClick={() => scroll('next')} className="w-11 h-11 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all shadow-sm">
+                <ChevronRight size={18} />
+              </button>
             </div>
+            <Link to="/product" className="hidden sm:flex items-center gap-2 font-bold text-[13px] border border-black/10 px-8 py-2.5 rounded-full hover:bg-black hover:text-white transition-all shadow-sm group">
+              Show all features <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>
