@@ -266,7 +266,6 @@ const FeatureMarquee = ({ cards, trackWidth, cardW, gap }) => {
       onMouseLeave={() => setHovered(false)}
     >
       <motion.div
-        style={{ x }}
         animate={controls}
         className="flex"
         style={{ gap: `${gap}px`, width: 'max-content', x }}
