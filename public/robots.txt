@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kareergrowth.systemmindz.com/sitemap.xml

@@ -16,7 +16,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="title-huge text-perk-black leading-tight"
           >
-            The intelligent platform to assess smarter, hire sharper, and place talent faster.
+            KareerGrowth: The intelligent platform to assess smarter, hire sharper, and place talent faster.
           </motion.h1>
         </div>
 
