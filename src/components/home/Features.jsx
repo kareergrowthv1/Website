@@ -283,8 +283,8 @@ const FeatureMarquee = ({ cards, trackWidth, cardW, gap }) => {
                 alt={card.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+              <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">
                 {card.tag}
               </div>
             </div>
@@ -466,8 +466,8 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
             >
               <div className="relative h-[55%] overflow-hidden">
                 <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2.5s]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm">{card.tag}</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
+                <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">{card.tag}</div>
               </div>
               <div className="p-6 flex flex-col h-[45%]">
                 <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">{card.title}</h3>

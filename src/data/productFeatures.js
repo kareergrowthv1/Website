@@ -2,126 +2,186 @@ export const productFeatures = [
     // --- RECRUITERS ---
     {
         tag: 'Recruiters',
-        title: 'Institutional-grade AI Proctoring',
-        desc: 'Ensure 100% integrity in every assessment. Our AI monitors hundreds of signals to prevent cheating and ensure a fair playing field for all candidates.',
-        image: '/assets/proctoring_security_1777048429737.png'
+        title: 'AI Candidate Screening',
+        desc: 'Automatically shortlist candidates based on job requirements and skill matching.',
+        image: '/assets/candidate_screening.png'
     },
     {
         tag: 'Recruiters',
-        title: 'Automated Round Coordination',
-        desc: 'No more manual scheduling. KareerGrowth automatically moves candidates through four rounds of vetting based on their competency scores.',
-        image: '/assets/ai_sourcing_1777048462145.png'
+        title: 'Smart Resume Ranking',
+        desc: 'Rank applicants using AI-powered scoring and matching systems.',
+        image: '/assets/resume_ranking.png'
     },
     {
         tag: 'Recruiters',
-        title: 'Deep Competency Analytics',
-        desc: 'Get a clear picture of every candidate. Our engine extracts deep insights into technical skills, communication, and problem-solving abilities.',
-        image: '/assets/performance_tracking_1777048480315.png'
+        title: 'Candidate Assessment Platform',
+        desc: 'Create technical, aptitude, and role-based assessments for hiring.',
+        image: '/assets/assessment_platform.png'
     },
     {
         tag: 'Recruiters',
-        title: 'Real-time Candidate Tracking',
-        desc: 'Monitor your entire hiring pipeline in one place. See who is excelling, who needs more time, and who the top-tier fits are for your specific roles.',
-        image: '/assets/all_in_one_1777048329140.png'
+        title: 'Interview Management System',
+        desc: 'Manage interview scheduling, tracking, and candidate evaluations.',
+        image: '/assets/interview_management.png'
     },
     {
         tag: 'Recruiters',
-        title: 'Human-like AI Interviews',
-        desc: 'Our AI interviewers run 24/7, providing a comfortable yet intensive experience for candidates to showcase their actual potential.',
-        image: '/assets/ai_sourcing_1777048462145.png'
+        title: 'Video Interview Platform',
+        desc: 'Conduct AI-powered video interviews with automated insights and analysis.',
+        image: '/assets/video_interview.png'
     },
     {
         tag: 'Recruiters',
-        title: 'Comprehensive Talent Insights',
-        desc: 'Data-driven hiring decisions made simple. We provide clear, actionable reports on every candidate that passes through the machine.',
-        image: '/assets/performance_tracking_1777048480315.png'
+        title: 'Recruitment Analytics Dashboard',
+        desc: 'Track hiring pipelines, conversion rates, and recruitment performance.',
+        image: '/assets/recruitment_analytics.png'
     },
     {
         tag: 'Recruiters',
-        title: 'Expert interview panels',
-        desc: 'Need help evaluating specialized tech stacks? Our global network of expert interviewers is available around the clock to conduct comprehensive technical interviews on your behalf.',
-        image: '/assets/ai_sourcing_1777048462145.png'
+        title: 'Job Posting Management',
+        desc: 'Create, manage, and distribute job postings from a centralized platform.',
+        image: '/assets/job_posting.png'
     },
-    
+    {
+        tag: 'Recruiters',
+        title: 'Candidate Database Management',
+        desc: 'Search, filter, and organize applicants with powerful talent management tools.',
+        image: '/assets/candidate_database.png'
+    },
+    {
+        tag: 'Recruiters',
+        title: 'Automated Communication System',
+        desc: 'Send interview invites, notifications, and hiring updates automatically.',
+        image: '/assets/automated_communication.png'
+    },
+    {
+        tag: 'Recruiters',
+        title: 'Hiring Workflow Automation',
+        desc: 'Reduce manual effort with automated recruitment workflows and approvals.',
+        image: '/assets/workflow_automation.png'
+    },
+
     // --- INSTITUTES ---
     {
         tag: 'Institutes',
-        title: 'Centralized Placement Dashboard',
-        desc: 'Gain bird-eye visibility into your entire placement season. Track company visits, student applications, and offer ratios in real-time.',
-        image: '/assets/all_in_one_1777048329140.png'
+        title: 'Student Placement Management',
+        desc: 'Manage student profiles, placements, applications, and outcomes centrally.',
+        image: '/assets/placement_dashboard.png'
     },
     {
         tag: 'Institutes',
-        title: 'Massive Batch Vetting',
-        desc: 'Assess thousands of students simultaneously without infrastructure headaches. Our cloud-scale engine handles heavy loads with 99.9% reliability.',
-        image: '/assets/proctoring_security_1777048429737.png'
+        title: 'Campus Recruitment Platform',
+        desc: 'Connect students directly with recruiters and hiring partners.',
+        image: '/assets/campus_recruitment.png'
     },
     {
         tag: 'Institutes',
-        title: 'AI Proctoring for Institutions',
-        desc: 'Ensure university-level integrity with our advanced proctoring suite, specifically designed for large-scale campus environments.',
-        image: '/assets/performance_tracking_1777048480315.png'
+        title: 'Student Skill Assessments',
+        desc: 'Evaluate technical, aptitude, and communication skills effectively.',
+        image: '/assets/assessment_platform.png'
     },
     {
         tag: 'Institutes',
-        title: 'Industry Readiness Scoring',
-        desc: 'Get detailed reports on which students are ready for which industries, allowing for more strategic placement coordination.',
-        image: '/assets/ai_sourcing_1777048462145.png'
+        title: 'Placement Analytics Dashboard',
+        desc: 'Track placement performance, hiring trends, and student progress.',
+        image: '/assets/recruitment_analytics.png'
     },
     {
         tag: 'Institutes',
-        title: 'Dedicated account manager',
-        desc: 'Looking for specific role adjustments? Our talent specialists are hands-on to ensure your placement journey is entirely seamless and guided with personalized support.',
-        image: '/assets/performance_tracking_1777048480315.png'
+        title: 'Mock Interview Platform',
+        desc: 'Help students prepare with realistic interview simulations and feedback.',
+        image: '/assets/mock_interview.png'
     },
-    
+    {
+        tag: 'Institutes',
+        title: 'Resume Building Platform',
+        desc: 'Enable students to create professional resumes quickly and efficiently.',
+        image: '/assets/ai_resume_builder.png'
+    },
+    {
+        tag: 'Institutes',
+        title: 'Industry Readiness Tracking',
+        desc: 'Monitor student progress toward employability and job readiness.',
+        image: '/assets/assessment_platform.png'
+    },
+    {
+        tag: 'Institutes',
+        title: 'Training Program Management',
+        desc: 'Create and manage courses, certifications, and learning activities.',
+        image: '/assets/skill_gap_analyzer.png'
+    },
+    {
+        tag: 'Institutes',
+        title: 'Recruiter Collaboration Portal',
+        desc: 'Allow institutes and companies to collaborate for hiring and events.',
+        image: '/assets/campus_recruitment.png'
+    },
+    {
+        tag: 'Institutes',
+        title: 'Placement Success Reports',
+        desc: 'Generate reports for placements, assessments, and recruitment activities.',
+        image: '/assets/recruitment_analytics.png'
+    },
+
     // --- CANDIDATES ---
     {
         tag: 'Candidates',
-        title: 'Smart job matching',
-        desc: 'Find roles tailored to your skills. Our advanced algorithms connect you with career opportunities that suit your unique potential perfectly.',
-        image: '/assets/ai_sourcing_1777048462145.png'
+        title: 'AI Resume Builder',
+        desc: 'Create ATS-friendly professional resumes with intelligent suggestions and role-based optimization.',
+        image: '/assets/ai_resume_builder.png'
     },
     {
         tag: 'Candidates',
-        title: 'Dynamic portfolio',
-        desc: 'Showcase your expertise effectively. Build interactive profiles so you automatically stand out and capture the attention of top recruiters.',
-        image: '/assets/all_in_one_1777048329140.png'
+        title: 'Smart Cover Letter Generator',
+        desc: 'Generate personalized cover letters instantly for every job application.',
+        image: '/assets/smart_cover_letter.png'
     },
     {
         tag: 'Candidates',
-        title: 'Skill workshops',
-        desc: 'Bridge the gap between academia and industry. Access curated learning paths and get industry-ready with high-level guidance tailored for you.',
-        image: '/assets/performance_tracking_1777048480315.png'
+        title: 'Job Application Dashboard',
+        desc: 'Track applications, interviews, statuses, and opportunities from one place.',
+        image: '/assets/placement_dashboard.png'
     },
     {
         tag: 'Candidates',
-        title: 'Personalized profile highlights',
-        desc: 'No more generic resumes. With our dynamic platform, your technical, behavioral, and communication skills are actively verified and championed.',
-        image: '/assets/proctoring_security_1777048429737.png'
+        title: 'Skill Gap Analyzer',
+        desc: 'Discover missing skills and get recommendations to improve job readiness.',
+        image: '/assets/skill_gap_analyzer.png'
     },
     {
         tag: 'Candidates',
-        title: 'Quick timeline changes',
-        desc: 'Requirements change instantly. Adapt dynamically with flexible workflows enabling you to modify assessments with just a few intuitive clicks.',
-        image: '/assets/ai_sourcing_1777048462145.png'
+        title: 'Profile Optimization Assistant',
+        desc: 'Improve visibility with smart suggestions to build stronger candidate profiles.',
+        image: '/assets/candidate_database.png'
     },
     {
         tag: 'Candidates',
-        title: 'Verified competency profiles',
-        desc: 'Showcase pre-assessed validated profiles. Instantly prove your technical proficiency transparently to bypass redundant screening stages.',
-        image: '/assets/proctoring_security_1777048429737.png'
+        title: 'AI Mock Interview Platform',
+        desc: 'Practice real interview scenarios with personalized questions and feedback.',
+        image: '/assets/mock_interview.png'
     },
     {
         tag: 'Candidates',
-        title: 'Global talent availability',
-        desc: 'Access opportunities from a vast network of growing tech companies and enterprise organizations actively hiring across all distinct domains.',
-        image: '/assets/all_in_one_1777048329140.png'
+        title: 'Career Analytics Dashboard',
+        desc: 'Monitor application success rates, performance trends, and progress.',
+        image: '/assets/recruitment_analytics.png'
     },
     {
-        tag: 'Institutes',
-        title: 'Complete role based login access',
-        desc: 'Security at every level. Manage permissions for Deans, faculty, and placement officers with a robust, enterprise-grade authentication system.',
-        image: '/assets/all_in_one_1777048329140.png'
+        tag: 'Candidates',
+        title: 'Resume & Document Export Center',
+        desc: 'Download resumes, cover letters, and reports in multiple formats instantly.',
+        image: '/assets/document_export.png'
+    },
+    {
+        tag: 'Candidates',
+        title: 'Smart Follow-Up Assistant',
+        desc: 'Manage recruiter follow-ups using reminders and prebuilt communication templates.',
+        image: '/assets/automated_communication.png'
+    },
+    {
+        tag: 'Candidates',
+        title: 'Personalized Job Recommendations',
+        desc: 'Get curated job suggestions based on skills, resume, and preferences.',
+        image: '/assets/candidate_screening.png'
     }
 ];
