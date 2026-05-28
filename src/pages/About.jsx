@@ -44,7 +44,7 @@ const About = () => {
             Empowering talent.
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Perk is an intelligent, assessment-first platform designed to eliminate hiring friction, ensure integrity, and align top-tier candidates with stellar recruiters.
+            KareerGrowth is an intelligent, assessment-first platform designed to eliminate hiring friction, ensure integrity, and align top-tier candidates with stellar recruiters.
           </p>
         </div>
       </section>
@@ -53,7 +53,7 @@ const About = () => {
       <section className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 mt-8">
         <div className="bg-white rounded-[32px] border border-perk-black/5 p-8 sm:p-12 shadow-sm">
           <div className="max-w-xl">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Core Principles Driving Perk</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Core Principles Driving KareerGrowth</h2>
             <p className="text-slate-500 font-medium">We build high-trust hiring infrastructure designed for universities and fast-growth businesses.</p>
           </div>
           

@@ -62,6 +62,9 @@ const CustomStyleBlock = () => (
       width: max-content;
       animation: scroll-right 28s linear infinite;
     }
+    .font-sono {
+      font-family: OTSono, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif !important;
+    }
   `}</style>
 );
 
@@ -235,10 +238,10 @@ const floatingApps = [
 
 const categories = [
   'All categories',
-  'Finance & Spend',
-  'Workspaces',
-  'HR & Payroll',
-  'Travel & Transport'
+  'Job Boards',
+  'Applicant Tracking Systems',
+  'Collaboration & Workspace',
+  'Communications & Scheduling'
 ];
 
 const partners = [
@@ -249,170 +252,147 @@ const partners = [
 
 const integrationCards = [
   {
-    name: 'Ramp',
+    name: 'LinkedIn Talent Solutions',
     logoRender: () => (
-      <div className="flex items-center gap-2 logo-hover-animation">
-        <span className="text-[32px] sm:text-[38px] font-black tracking-[-0.04em] text-black select-none lowercase leading-none">ramp</span>
-        <svg viewBox="0 0 100 100" className="w-7 h-7 sm:w-8 sm:h-8 fill-black">
-          <path d="M25,20 C45,20 65,30 75,55 C78,63 74,70 65,70 C55,70 45,55 35,40 C28,30 22,25 25,20 Z" />
-        </svg>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" className="w-9 h-9 object-contain" alt="LinkedIn" />
       </div>
     ),
     description:
-      'Complement Perk with Ramp and get an all-in-one travel, corporate card, and expense management solution for free.',
+      'Sync KareerGrowth with LinkedIn Talent Solutions to post roles, extract passive candidate profiles, and manage applicants in real time.',
     featured: true,
     size: 'large', // Spans full width
-    category: 'Finance & Spend',
+    category: 'Job Boards',
     partnerType: 'Featured'
   },
   {
-    name: 'BILL Spend & Expense',
+    name: 'Indeed Sourcing',
     logoRender: () => (
-      <div className="flex items-center logo-hover-animation">
-        <span className="text-[#f05a28] text-[28px] sm:text-[34px] font-black tracking-[-0.05em] select-none lowercase leading-none">bill</span>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://iaccessibility.net/wp-content/uploads/2018/04/indeed-employer-logo.png" className="w-8 h-8 object-contain scale-[1.2] rounded-lg" alt="Indeed" />
       </div>
     ),
     description:
-      'With Bill Spend & Expense, powered by Perk, SMBs in the US will enjoy a centralized portal where they can easily book, manage, and report on travel.',
+      "Connect KareerGrowth with Indeed, the world's #1 job site, to publish opportunities automatically and process assessment pipelines.",
     size: 'medium', // Spans 50% width
-    category: 'Finance & Spend',
+    category: 'Job Boards',
     partnerType: 'Standard'
   },
   {
-    name: 'Pleo',
+    name: 'Naukri.com Integration',
     logoRender: () => (
-      <div className="flex items-center logo-hover-animation">
-        <div className="w-9 h-9 bg-black rounded-lg flex items-center justify-center p-1.5 shadow-sm">
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-white">
-            <path d="M20,20 L80,20 L80,45 L45,45 L45,80 L20,80 Z" />
-          </svg>
-        </div>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://pbs.twimg.com/profile_images/1772331192085274624/PlbkwMwX_400x400.png" className="w-8 h-8 object-contain rounded-lg" alt="Naukri" />
       </div>
     ),
     description:
-      'Pleo now seamlessly integrates with Perk, to give you a state-of-the-art business spending solution.',
+      "Tap into India's largest employment platform. Automatically screen profiles, match assessments, and pull pre-qualified candidates.",
     size: 'medium', // Spans 50% width
-    category: 'Finance & Spend',
+    category: 'Job Boards',
     partnerType: 'Standard'
   },
   {
-    name: 'Bolt Business',
+    name: 'Zoho Recruit',
     logoRender: () => (
-      <div className="flex items-center logo-hover-animation">
-        <div className="w-9 h-9 bg-[#00cd73] rounded-lg flex items-center justify-center p-1.5 shadow-sm">
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-white">
-            <polygon points="60,10 20,55 50,55 40,90 80,45 50,45" />
-          </svg>
-        </div>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsy5z_xdAg28SwbkWx2rkcppOSRkBNige6Iw&s" className="w-7 h-7 object-contain scale-[1.3] rounded-md" alt="Zoho" />
       </div>
     ),
     description:
-      'Pair your Perk trips with Bolt Business for seamless, reliable ground transport wherever your team travels.',
+      'Keep database records in perfect sync by automatically migrating candidates and assessment statuses into Zoho Recruit ATS.',
     size: 'small', // Spans 25% width
-    category: 'Travel & Transport',
+    category: 'Applicant Tracking Systems',
     partnerType: 'Standard'
   },
   {
-    name: 'WeWork',
+    name: 'Slack Alerts',
     logoRender: () => (
-      <div className="w-9 h-9 rounded-full border-[2px] border-black flex items-center justify-center p-1 font-black text-black text-[12px] logo-hover-animation">
-        we
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" className="w-7 h-7 object-contain" alt="Slack" />
       </div>
     ),
     description:
-      'WeWork delivers inspiring, flexible workspaces around the world so Perk travellers can work, meet and focus anywhere.',
+      'Receive instant notification updates in dedicated channels when candidates complete assessments or pass screening tests.',
     size: 'small',
-    category: 'Workspaces',
+    category: 'Collaboration & Workspace',
     partnerType: 'Standard'
   },
   {
-    name: 'HiBob',
+    name: 'WhatsApp Business',
     logoRender: () => (
-      <div className="flex items-center gap-0.5 select-none leading-none logo-hover-animation">
-        <span className="text-[#e92e68] text-[18px] font-extrabold">Hi</span>
-        <span className="text-black text-[18px] font-black tracking-[-0.02em]">Bob</span>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" className="w-7 h-7 object-contain" alt="WhatsApp" />
       </div>
     ),
     description:
-      "HiBob's intuitive HR platform now seamlessly integrates with the business travel management platform Perk.",
+      'Engage candidates on their phones. Send instant screening invitations, assessment links, and interview feedback.',
     size: 'small',
-    category: 'HR & Payroll',
+    category: 'Collaboration & Workspace',
     partnerType: 'Standard'
   },
   {
-    name: 'Deel',
+    name: 'Google Calendar',
     logoRender: () => (
-      <div className="bg-black text-white px-3 py-1 rounded font-serif italic font-extrabold text-[13px] select-none shadow-sm logo-hover-animation">
-        deel.
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" className="w-6 h-6 object-contain" alt="Google Calendar" />
       </div>
     ),
     description:
-      'Deel simplifies global hiring, payroll and compliance, helping distributed teams travel and work confidently with Perk.',
+      'Coordinate interviewer availability instantly. Automatically block schedules and send custom digital invites.',
     size: 'small',
-    category: 'HR & Payroll',
+    category: 'Communications & Scheduling',
     partnerType: 'Standard'
   },
   {
-    name: 'GetYourGuide',
+    name: 'Google Meet',
     logoRender: () => (
-      <div className="w-9 h-9 bg-[#ff551f] rounded-lg flex flex-col items-center justify-center p-0.5 text-center leading-none text-white font-extrabold text-[7px] tracking-tighter shadow-sm select-none logo-hover-animation">
-        <span>GET</span>
-        <span>YOUR</span>
-        <span>GUIDE</span>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Meet_icon_%282020%29.svg" className="w-6 h-6 object-contain" alt="Google Meet" />
       </div>
     ),
     description:
-      'GetYourGuide helps Perk travellers discover and book unforgettable experiences, tours and activities in thousands of destinations worldwide.',
+      'Initiate live video screening and digital interviews directly from KareerGrowth with automatic, custom Meet links.',
     size: 'small',
-    category: 'Travel & Transport',
+    category: 'Communications & Scheduling',
     partnerType: 'Standard'
   },
   {
-    name: 'Croissant',
+    name: 'Gmail Integration',
     logoRender: () => (
-      <div className="flex items-center leading-none logo-hover-animation">
-        <span className="text-black text-[22px] font-extrabold tracking-[-0.05em] select-none lowercase">croissant</span>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" className="w-6 h-6 object-contain" alt="Gmail" />
       </div>
     ),
     description:
-      'Croissant provides flexible, pay-as-you-go workspace access in 500+ global locations, helping Perk customers work productively worldwide.',
+      'Manage candidate conversations directly. Set automated templates, follow-ups, and milestone announcements.',
     size: 'small',
-    category: 'Workspaces',
+    category: 'Communications & Scheduling',
     partnerType: 'Standard'
   },
   {
-    name: 'Freenow for Business',
+    name: 'Google Alerts Sourcing',
     logoRender: () => (
-      <div className="flex flex-col select-none leading-none logo-hover-animation">
-        <div className="flex items-center gap-0.5">
-          <span className="text-[#e11948] text-[15px] font-black lowercase tracking-tighter">freenow</span>
-          <svg viewBox="0 0 100 100" className="w-3.5 h-3.5 fill-[#e11948]">
-            <path d="M50,15 A35,35 0 0,0 15,50 C15,75 50,90 50,90 C50,90 85,75 85,50 A35,35 0 0,0 50,15 Z" />
-          </svg>
-        </div>
-        <span className="text-[9px] text-gray-500 font-bold ml-0.5 mt-0.5 lowercase tracking-wider">by lyt</span>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://play-lh.googleusercontent.com/YqM8H7Vip-UqQmsKXeJKxlvw8UcEc9v7oMEoPOe-8VDh1wKUudK6rdQ5TEaGjv8BkWA" className="w-6 h-6 object-contain scale-[1.2] rounded-md" alt="Google Alerts" />
       </div>
     ),
     description:
-      'Freenow for Business offers Perk travellers seamless access to taxis and ride services with company-wide billing and control.',
+      'Track competitors, targeted talent pools, and emerging industry hiring trends dynamically with real-time news feeds.',
     size: 'small',
-    category: 'Travel & Transport',
+    category: 'Job Boards',
     partnerType: 'Standard'
   },
   {
-    name: 'Lounge Pass',
+    name: 'Shine Jobs Postings',
     logoRender: () => (
-      <div className="flex items-center gap-1 select-none leading-none logo-hover-animation">
-        <svg viewBox="0 0 100 100" className="w-4 h-4 fill-red-400 opacity-60">
-          <path d="M20,50 C20,30 50,20 80,40 C60,25 35,35 30,50 Z" />
-        </svg>
-        <span className="text-gray-400 font-serif italic text-[13px] uppercase tracking-wider font-semibold">Lounge Pass</span>
+      <div className="flex items-center logo-hover-animation select-none">
+        <img src="https://images.seeklogo.com/logo-png/42/1/shine-com-logo-png_seeklogo-427506.png" className="w-6 h-6 object-contain scale-[1.3]" alt="Shine Jobs" />
       </div>
     ),
     description:
-      'With Lounge Pass, Perk users can relax, recharge and work in comfort with single-use access to 800+ airport lounges across 350 airports.',
+      'Publish assessment-based roles instantly to Shine.com to source and screen pre-qualified professional profiles.',
     size: 'small',
-    category: 'Travel & Transport',
+    category: 'Job Boards',
     partnerType: 'Standard'
   }
 ];
@@ -470,7 +450,7 @@ const Integrations = () => {
   const smallCards = filteredCards.filter((c) => c.size === 'small');
 
   return (
-    <main className="min-h-screen bg-white pb-24 font-sans antialiased text-[#1a1a1a]">
+    <main className="min-h-screen bg-white pb-24 font-sono antialiased text-[#1a1a1a]">
       <CustomStyleBlock />
 
       {/* Hero Header Section - Sits on soft warm cream background matching the navbar */}
@@ -644,7 +624,7 @@ const Integrations = () => {
               <div className="flex items-center justify-between">
                 {card.logoRender()}
               </div>
-              <h2 className="mt-6 text-2xl sm:text-[30px] font-black tracking-[-0.03em] leading-none text-black">
+              <h2 className="mt-6 text-2xl sm:text-[30px] font-sans font-semibold tracking-[-0.03em] leading-none text-black">
                 {card.name}
               </h2>
               <p className="mt-4 text-[15px] sm:text-[17px] leading-[1.45] text-[#5f5f5a] max-w-5xl tracking-tight">
@@ -671,7 +651,7 @@ const Integrations = () => {
                   <div className="flex items-center">
                     {card.logoRender()}
                   </div>
-                  <h3 className="mt-5 text-xl sm:text-[24px] font-black tracking-[-0.03em] leading-none text-black">
+                  <h3 className="mt-5 text-xl sm:text-[24px] font-sans font-semibold tracking-[-0.03em] leading-none text-black">
                     {card.name}
                   </h3>
                   <p className="mt-4 text-[14px] sm:text-[15.5px] leading-[1.45] text-[#5f5f5a] tracking-tight">
@@ -700,7 +680,7 @@ const Integrations = () => {
                   <div className="flex items-center min-h-[44px]">
                     {card.logoRender()}
                   </div>
-                  <h3 className="mt-4 text-lg sm:text-[20px] font-black tracking-[-0.03em] leading-tight text-black">
+                  <h3 className="mt-4 text-lg sm:text-[20px] font-sans font-semibold tracking-[-0.03em] leading-tight text-black">
                     {card.name}
                   </h3>
                   <p className="mt-3 text-[13px] sm:text-[14.5px] leading-[1.4] text-[#676762] tracking-tight">

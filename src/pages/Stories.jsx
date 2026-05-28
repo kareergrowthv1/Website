@@ -8,7 +8,7 @@ const Stories = () => {
       badge: <Landmark className="w-4 h-4 text-emerald-600" />,
       company: "Deloitte",
       title: "How Deloitte Cut Engineering Placement Shortlist Time by 70%",
-      summary: "Deloitte leveraged Perk's automatic AI proctoring and coding assessments to evaluate 1,200 college candidates simultaneously, generating a placement shortlist in under 3 days.",
+      summary: "Deloitte leveraged KareerGrowth's automatic AI proctoring and coding assessments to evaluate 1,200 college candidates simultaneously, generating a placement shortlist in under 3 days.",
       metric: "70% faster time-to-shortlist",
       cta: "Read Case Study"
     },
@@ -17,7 +17,7 @@ const Stories = () => {
       badge: <Award className="w-4 h-4 text-blue-600" />,
       company: "IIT Bombay Placement Cell",
       title: "IIT Bombay Empowers 98% Placement Success Rate in Coding Cohorts",
-      summary: "With Perk's deep-competency reports, the IIT Bombay placement cell successfully mapped cohort skillsets to match specific industry profiles, maximizing recruitment efficiency.",
+      summary: "With KareerGrowth's deep-competency reports, the IIT Bombay placement cell successfully mapped cohort skillsets to match specific industry profiles, maximizing recruitment efficiency.",
       metric: "98% Placement Success",
       cta: "View Institute Story"
     },
@@ -26,7 +26,7 @@ const Stories = () => {
       badge: <Landmark className="w-4 h-4 text-emerald-600" />,
       company: "TATA Steel",
       title: "Tata Steel Achieves Placement Integrity and AI Test Credibility",
-      summary: "By deploying Perk's strict AI proctoring controls, Tata Steel conducted secure campus recruitments across 45 regional centers with full confidence in candidate test validity.",
+      summary: "By deploying KareerGrowth's strict AI proctoring controls, Tata Steel conducted secure campus recruitments across 45 regional centers with full confidence in candidate test validity.",
       metric: "100% Secure Proctoring",
       cta: "Read Success Story"
     },
@@ -35,7 +35,7 @@ const Stories = () => {
       badge: <Award className="w-4 h-4 text-blue-600" />,
       company: "NIT Trichy Engineering",
       title: "NIT Trichy Fast-tracks Tech placements with Mock Assessments",
-      summary: "Using Perk as a placement training dashboard, NIT Trichy helped students run diagnostic mock exams in coding, data structures, and aptitude to align their skillsets with top corporate profiles.",
+      summary: "Using KareerGrowth as a placement training dashboard, NIT Trichy helped students run diagnostic mock exams in coding, data structures, and aptitude to align their skillsets with top corporate profiles.",
       metric: "4.8/5 Student Rating",
       cta: "Read Academy Report"
     }
@@ -53,7 +53,7 @@ const Stories = () => {
             High-velocity hires.
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Discover how leading engineering institutes, multinational corporations, and stellar students fast-track opportunities using Perk's unified assessment ecosystem.
+            Discover how leading engineering institutes, multinational corporations, and stellar students fast-track opportunities using KareerGrowth's unified assessment ecosystem.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ const Stories = () => {
           <div className="max-w-3xl relative z-10">
             <span className="text-[10px] font-black uppercase bg-[#00c2ff]/20 text-[#00c2ff] px-3.5 py-1.5 rounded-full tracking-widest">Partner Spotlight</span>
             <blockquote className="mt-8 text-xl sm:text-2xl font-serif italic leading-relaxed text-slate-100">
-              "Perk completely streamlined our placement season. What used to take months of manual resume reviews, exam evaluations, and coordination was resolved in days with high-integrity competency shortlists."
+              "KareerGrowth completely streamlined our placement season. What used to take months of manual resume reviews, exam evaluations, and coordination was resolved in days with high-integrity competency shortlists."
             </blockquote>
             <div className="mt-8">
               <h4 className="font-bold text-lg">Dr. Rajesh Khanna</h4>

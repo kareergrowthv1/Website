@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -8,6 +9,7 @@
   
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-display: 'Inter', var(--font-sans);
+  --font-sono: OTSono, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 @layer base {
@@ -17,7 +19,8 @@
   }
 
   h1, h2, h3 {
-    @apply font-display font-medium tracking-tight text-perk-black;
+    font-family: OTSono, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    @apply font-medium tracking-tight text-perk-black;
   }
 }
 
