@@ -1,31 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, ExternalLink, MoveRight } from 'lucide-react';
+import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const VideoSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const videos = [
-    { id: '9noX6980N4U', title: 'Modern Infrastructure' },
-    { id: 'ScMzIvxBSi4', title: 'Team Collaboration' },
-    { id: 'XmreF8aFkZc', title: 'Development Flow' },
-    { id: '9vYV7wT2cZ0', title: 'Business Growth' },
-    { id: 'L_LUpnjUXP0', title: 'Future of Work' },
+    { id: 'youtube-candidate', title: 'AI Candidate Acceleration', embedId: 'UWMjSEzrME0' },
+    { id: 'youtube-recruiters-institutes', title: 'AI Recruiters & Institutes Placements', embedId: 'Y0BXaQ85PLc' },
   ];
 
+  // Custom Timer-based Carousel Sliding and Progress Updates
   useEffect(() => {
-    let interval;
-    if (isPlaying) {
-      interval = setInterval(() => {
+    setProgress(0);
+    if (isHovered) return;
+
+    const startTime = Date.now();
+    const duration = 10000; // 10 seconds per slide
+
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min((elapsed / duration) * 100, 100);
+      setProgress(pct);
+
+      if (elapsed >= duration) {
+        clearInterval(timer);
         setCurrentIndex((prev) => (prev + 1) % videos.length);
-      }, 5000);
-    }
-    return () => clearInterval(interval);
-  }, [isPlaying]);
+      }
+    }, 50);
+
+    return () => clearInterval(timer);
+  }, [currentIndex, isHovered]);
 
   const handleWatchFull = () => {
-    window.open(`https://www.youtube.com/watch?v=${videos[currentIndex].id}`, '_blank');
+    window.open(`https://www.youtube.com/watch?v=${videos[currentIndex].embedId}`, '_blank');
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % videos.length);
+  };
+
+  const handleSelectSlide = (idx) => {
+    setCurrentIndex(idx);
   };
 
   return (
@@ -51,69 +73,93 @@ const VideoSection = () => {
           </motion.p>
         </div>
 
-        {/* Video Container */}
-        <div className="relative aspect-video w-full rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl border-4 border-white/50 bg-slate-900 group">
-          {/* YouTube Embed Layer */}
-          <div className="absolute inset-0 pointer-events-none scale-105">
+        {/* Video Container (1920x1080 Aspect-Ratio 16:9 Screen Shape) */}
+        <div 
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="relative aspect-video w-full max-w-4xl mx-auto bg-perk-black rounded-[28px] overflow-hidden shadow-2xl border border-black/10 group"
+        >
+          {/* Video Embed Layer */}
+          <div className="absolute inset-0 scale-100">
             <AnimatePresence mode="wait">
               <motion.div
                 key={videos[currentIndex].id}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.8 }}
                 className="w-full h-full"
               >
                 <iframe
-                  src={`https://www.youtube.com/embed/${videos[currentIndex].id}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videos[currentIndex].id}&modestbranding=1&rel=0`}
-                  title="YouTube video player"
+                  src={`https://www.youtube.com/embed/${videos[currentIndex].embedId}?autoplay=1&mute=1&loop=1&playlist=${videos[currentIndex].embedId}&controls=1&rel=0`}
+                  title={videos[currentIndex].title}
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="w-full h-full pointer-events-none"
-                ></iframe>
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full object-cover bg-[#0a0a0c]"
+                />
               </motion.div>
             </AnimatePresence>
           </div>
 
           {/* Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
           {/* Controls Overlay */}
           <div className="absolute top-8 right-8 flex items-center gap-4 z-20">
             <button 
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95"
-            >
-              {isPlaying ? <Pause size={20} fill="white" /> : <Play size={20} fill="white" className="ml-1" />}
-            </button>
-            <button 
               onClick={handleWatchFull}
-              className="flex items-center gap-2 px-6 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-bold hover:bg-white/20 transition-all active:scale-95"
+              className="flex items-center gap-2 px-6 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-bold hover:bg-white/20 transition-all active:scale-95 shadow-md"
             >
-              <Play size={16} fill="white" />
-              Watch full video
+              <ExternalLink size={16} />
+              Watch on YouTube
             </button>
           </div>
 
+          {/* Left & Right Arrow Navigation Controls */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
+            className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95 z-20 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
+            className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95 z-20 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={24} />
+          </button>
+
           {/* Video Title (Bottom Left) */}
-          <div className="absolute bottom-8 left-8 z-20 text-white/80 text-sm font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute bottom-8 left-8 z-20 text-white/80 text-sm font-bold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
             {videos[currentIndex].title}
           </div>
           
           {/* Progress Indicators */}
           <div className="absolute bottom-0 left-0 right-0 h-1.5 flex gap-1 px-8 mb-4 z-20">
             {videos.map((_, idx) => (
-              <div key={idx} className="h-full flex-grow bg-white/20 rounded-full overflow-hidden">
-                {currentIndex === idx && isPlaying && (
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: '100%' }}
-                    transition={{ duration: 5, ease: "linear" }}
-                    className="h-full bg-brand-lime"
+              <button 
+                key={idx} 
+                onClick={() => handleSelectSlide(idx)}
+                className="h-full flex-grow bg-white/20 rounded-full overflow-hidden relative cursor-pointer focus:outline-none"
+              >
+                {currentIndex === idx ? (
+                  <div 
+                    style={{ width: `${progress}%` }}
+                    className="h-full bg-brand-lime transition-all duration-100 ease-out"
                   />
-                )}
-                {currentIndex > idx && <div className="h-full w-full bg-brand-lime/50" />}
-              </div>
+                ) : currentIndex > idx ? (
+                  <div className="h-full w-full bg-brand-lime/50" />
+                ) : null}
+              </button>
             ))}
           </div>
         </div>

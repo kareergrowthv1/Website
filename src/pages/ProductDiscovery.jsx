@@ -3,25 +3,28 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import TrustedBanner from '../components/home/TrustedBanner';
 import { productFeatures } from '../data/productFeatures';
-
 const ProductDiscovery = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
   const filters = ['All', 'Recruiters', 'Institutes', 'Candidates'];
+
+  const handleFilterChange = (filter) => {
+    setActiveFilter(filter);
+  };
 
   return (
     <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-cream min-h-screen">
       <div className="max-w-[1440px] mx-auto text-center">
 
         {/* Hero — Top Statement */}
-        <div className="mb-16 max-w-5xl mx-auto flex flex-col items-center">
+        <div className="mb-16 max-w-none w-full flex flex-col items-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="title-huge mt-0 font-medium tracking-[-0.04em] leading-[1.05] text-center text-perk-black mb-8"
           >
-            Get down to business<br />with our AI-Powered<br />
+            Get down to business with our AI-Powered<br />
             <span className="text-perk-black/30">Career Acceleration Platform</span>
           </motion.h1>
 
@@ -80,36 +83,17 @@ const ProductDiscovery = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="relative w-full aspect-video bg-perk-black rounded-[28px] overflow-hidden shadow-2xl border border-black/10 group cursor-pointer"
+            className="relative w-full aspect-video bg-perk-black rounded-[28px] overflow-hidden shadow-2xl border border-black/10 group"
           >
-            {/* Poster / background */}
-            <img
-              src="/assets/all_in_one_1777048329140.png"
-              className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-700"
-            />
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
-
-            {/* Play button */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
-              <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-brand-lime group-hover:border-brand-lime transition-all duration-300 shadow-lg">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="white" className="translate-x-0.5 group-hover:fill-perk-black transition-colors duration-300">
-                  <path d="M8 5.14v14l11-7-11-7z" />
-                </svg>
-              </div>
-              <p className="text-white/70 text-[13px] font-semibold tracking-wide">Watch platform overview · 2 min</p>
-            </div>
-
-            {/* Bottom label */}
-            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-              <div className="text-left">
-                <p className="text-white font-bold text-lg tracking-tight">KareerGrowth Platform</p>
-                <p className="text-white/50 text-[13px] font-medium">Recruiters · Institutes · Candidates</p>
-              </div>
-              <div className="px-4 py-1.5 bg-brand-lime rounded-full text-[12px] font-bold text-perk-black">
-                Watch now
-              </div>
-            </div>
+            <iframe
+              key={activeFilter}
+              src={`https://www.youtube.com/embed/${activeFilter === 'Recruiters' || activeFilter === 'Institutes' ? 'Y0BXaQ85PLc' : 'UWMjSEzrME0'}?autoplay=1&mute=1&loop=1&playlist=${activeFilter === 'Recruiters' || activeFilter === 'Institutes' ? 'Y0BXaQ85PLc' : 'UWMjSEzrME0'}&controls=1`}
+              title="KareerGrowth Overview"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full object-cover"
+            ></iframe>
           </motion.div>
         </div>
 
@@ -120,7 +104,7 @@ const ProductDiscovery = () => {
               return (
                 <button
                   key={i}
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => handleFilterChange(filter)}
                   className={`px-8 py-2.5 rounded-full text-[15px] font-bold whitespace-nowrap transition-all ${isActive ? 'bg-brand-lime text-perk-black shadow-sm scale-105' : 'text-perk-black/50 hover:text-perk-black hover:bg-black/5'}`}
                 >
                   {filter}

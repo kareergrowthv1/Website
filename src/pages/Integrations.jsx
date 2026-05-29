@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { ChevronDown, ChevronRight, Search, Check } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Custom CSS styling block for premium floating and hover animations
 const CustomStyleBlock = () => (
@@ -470,19 +471,37 @@ const Integrations = () => {
           {/* Hero text content */}
           <div className="relative z-20 max-w-4xl mx-auto text-center px-4 flex flex-col items-center justify-center">
             {/* Consistent homepage headline font styling */}
-            <h1 className="title-huge text-perk-black text-center font-medium tracking-[-0.04em] leading-[1.05]">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="title-huge text-perk-black text-center font-medium tracking-[-0.04em] leading-[1.05]"
+            >
               AI-Powered Integrations.
               <br />
               Sync & Streamline with AI.
-            </h1>
-            <p className="mt-7 text-[16px] sm:text-[18px] text-[#5f5f59] max-w-[580px] mx-auto leading-[1.4] tracking-tight">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="mt-7 text-[16px] sm:text-[18px] text-[#5f5f59] max-w-[580px] mx-auto leading-[1.4] tracking-tight"
+            >
               Browse our marketplace for tools that make travel for work even simpler and smarter—from onboarding to invoicing. Just download, connect, and you're all set.
-            </p>
-            <div className="mt-9 flex justify-center">
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="mt-9 flex justify-center"
+            >
               <button className="inline-flex items-center gap-1 bg-[#bef33e] text-black px-7 py-3 rounded-full font-bold text-[16px] hover:brightness-95 transition-all border border-black/5 shadow-sm active:scale-95 duration-150">
                 Book a demo <ChevronRight size={16} className="stroke-[3]" />
               </button>
-            </div>
+            </motion.div>
           </div>
 
           {/* Mobile infinite scrolling logo carousel - Visible only on mobile/tablet screens to cover the empty gap */}
@@ -616,8 +635,12 @@ const Integrations = () => {
         
         {/* ROW 1: Large Featured Card */}
         {largeCards.map((card) => (
-          <article
+          <motion.article
             key={card.name}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="rounded-[32px] border border-[#e4e4dd] bg-white p-8 sm:p-10 lg:p-12 card-hover-effect flex flex-col justify-between"
           >
             <div>
@@ -636,15 +659,19 @@ const Integrations = () => {
                 Read more <ChevronRight size={14} className="stroke-[2.5]" />
               </button>
             </div>
-          </article>
+          </motion.article>
         ))}
 
         {/* ROW 2: Medium 2-Column Cards */}
         {mediumCards.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mediumCards.map((card) => (
-              <article
+            {mediumCards.map((card, i) => (
+              <motion.article
                 key={card.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
                 className="rounded-[32px] border border-[#e4e4dd] bg-white p-7 sm:p-9 card-hover-effect flex flex-col justify-between"
               >
                 <div>
@@ -663,7 +690,7 @@ const Integrations = () => {
                     Read more <ChevronRight size={14} className="stroke-[2.5]" />
                   </button>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         )}
@@ -671,9 +698,13 @@ const Integrations = () => {
         {/* ROW 3+: Small 4-Column Cards */}
         {smallCards.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {smallCards.map((card) => (
-              <article
+            {smallCards.map((card, i) => (
+              <motion.article
                 key={card.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
                 className="rounded-[28px] border border-[#e4e4dd] bg-white p-6 card-hover-effect flex flex-col justify-between"
               >
                 <div>
@@ -692,7 +723,7 @@ const Integrations = () => {
                     Read more <ChevronRight size={12} className="stroke-[2.5]" />
                   </button>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         )}

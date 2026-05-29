@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Check, X, ShieldCheck, Smartphone, ArrowRight, BarChart3, Clock, Lock, Sparkles, GraduationCap, Users, Layout, Zap } from 'lucide-react';
-import heroImage from '../../assets/hero.png';
+import heroImage from '../../assets/monilehand.png';
 
 const Hero = () => {
   return (
