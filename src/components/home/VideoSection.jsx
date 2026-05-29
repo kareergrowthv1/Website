@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const VideoSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,10 +33,6 @@ const VideoSection = () => {
 
     return () => clearInterval(timer);
   }, [currentIndex, isHovered]);
-
-  const handleWatchFull = () => {
-    window.open(`https://www.youtube.com/watch?v=${videos[currentIndex].embedId}`, '_blank');
-  };
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
@@ -104,16 +100,7 @@ const VideoSection = () => {
           {/* Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
-          {/* Controls Overlay */}
-          <div className="absolute top-8 right-8 flex items-center gap-4 z-20">
-            <button 
-              onClick={handleWatchFull}
-              className="flex items-center gap-2 px-6 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white text-sm font-bold hover:bg-white/20 transition-all active:scale-95 shadow-md"
-            >
-              <ExternalLink size={16} />
-              Watch on YouTube
-            </button>
-          </div>
+
 
           {/* Left & Right Arrow Navigation Controls */}
           <button
