@@ -80,7 +80,7 @@ const VideoSection = () => {
           className="relative aspect-video w-full max-w-4xl mx-auto bg-perk-black rounded-[28px] overflow-hidden shadow-2xl border border-black/10 group"
         >
           {/* Video Embed Layer */}
-          <div className="absolute inset-0 scale-100">
+          <div className="absolute inset-0 scale-100 overflow-hidden pointer-events-none z-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={videos[currentIndex].id}
@@ -88,15 +88,14 @@ const VideoSection = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8 }}
-                className="w-full h-full"
+                className="w-full h-full relative"
               >
                 <iframe
-                  src={`https://www.youtube.com/embed/${videos[currentIndex].embedId}?autoplay=1&mute=1&loop=1&playlist=${videos[currentIndex].embedId}&controls=1&rel=0`}
+                  src={`https://www.youtube.com/embed/${videos[currentIndex].embedId}?autoplay=1&mute=1&loop=1&playlist=${videos[currentIndex].embedId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0`}
                   title={videos[currentIndex].title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full object-cover bg-[#0a0a0c]"
+                  className="absolute w-[116%] h-[116%] left-[-8%] top-[-8%] object-cover pointer-events-none bg-[#0a0a0c]"
                 />
               </motion.div>
             </AnimatePresence>
