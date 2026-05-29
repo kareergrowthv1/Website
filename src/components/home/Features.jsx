@@ -12,39 +12,44 @@ const fieldEngineerImg = '/Users/ifocus/.gemini/antigravity/brain/b9dd75a1-1b4d-
 // News items for the recruitment marquee
 const recruitmentNews = [
   {
-    source: 'CNBC',
-    title: 'KareerGrowth doubles valuation to $2.7 billion, plans fintech push',
-    desc: 'The company is eyeing a major expansion into financial services as it hits a new valuation...',
-    action: 'Read more',
+    source: 'TechCrunch',
+    title: 'AI agents screen 10,000+ applicants in under 5 minutes',
+    desc: 'New conversational tech-hiring models automate screening rounds at unprecedented velocity.',
+    action: 'Explore AI Vetting',
+    link: '/product?tab=Recruiters',
     type: 'news'
   },
   {
     source: 'Forbes',
-    title: 'Loyalty Bonus: How A Recruitment Policy Has Grown In A Constrained Environment',
-    desc: 'Exploring how loyalty programs are adapting to the new corporate landscape.',
-    action: 'Read more',
+    title: 'How automated proctoring sandboxes cut high-volume operations by 75%',
+    desc: 'Eliminating manual vetting friction and cheating attempts using lock-down browser sandboxes.',
+    action: 'See Sandbox',
+    link: '/product?tab=Recruiters',
     type: 'news'
   },
   {
-    source: 'Wise',
-    title: '"People book their own travel without involving us. It gives us a lot of time back. KareerGrowth has..."',
-    author: 'Marta Kutt',
-    role: 'Events & Travel Manager',
-    action: 'Watch',
+    source: 'Deloitte',
+    title: '"Automatic proctoring has been an absolute game changer for our global campus drives."',
+    author: 'Marta Jenkins',
+    role: 'Lead Talent Acquisition, Deloitte',
+    action: 'Watch story',
+    link: '/stories',
     type: 'testimonial'
   },
   {
-    source: 'Bloomberg',
-    title: 'KareerGrowth hits $1.3 billion valuation as business trips rebound',
-    desc: 'Market resurgence fuels investor confidence in the travel tech giant\'s future.',
-    action: 'Read more',
+    source: 'VentureBeat',
+    title: 'Deep semantic ATS engines boost matching accuracy to 98%',
+    desc: 'Beyond basic keywords. LLM-based profile scorers match candidates perfectly to job specs.',
+    action: 'Test Parser',
+    link: '/product?tab=Recruiters',
     type: 'news'
   },
   {
-    source: 'BBC',
-    title: 'Your team is your product, build a well-oiled machine',
-    desc: 'The critical importance of organizational culture in the era of hybrid work.',
-    action: 'Read more',
+    source: 'Wired',
+    title: 'Why active commit history is replacing legacy resume guesses',
+    desc: 'How direct GitHub/GitLab crawlers generate verified skills badges autonomously.',
+    action: 'Build Portfolio',
+    link: '/product?tab=Candidates',
     type: 'news'
   }
 ];
@@ -56,6 +61,7 @@ const instituteNews = [
     title: 'Top 50 Engineering Colleges adopt KareerGrowth for Batch Vetting',
     desc: 'New standard in campus placements simplifies bulk interview coordination.',
     action: 'Read story',
+    link: '/product?tab=Institutes',
     type: 'news'
   },
   {
@@ -63,6 +69,7 @@ const instituteNews = [
     title: 'University of Technology reports 40% higher placement rate',
     desc: 'How standardized competency metrics helped students land better roles.',
     action: 'Read more',
+    link: '/product?tab=Institutes',
     type: 'news'
   },
   {
@@ -71,6 +78,7 @@ const instituteNews = [
     author: 'Dr. Arjan Singh',
     role: 'Dean of Placements',
     action: 'Watch',
+    link: '/stories',
     type: 'testimonial'
   },
   {
@@ -78,6 +86,7 @@ const instituteNews = [
     title: 'Standardizing Academic Integrity with Institutional-grade AI Proctoring',
     desc: 'How KareerGrowth sets new benchmarks for fair assessment in higher ed.',
     action: 'Read more',
+    link: '/product?tab=Institutes',
     type: 'news'
   },
   {
@@ -85,6 +94,7 @@ const instituteNews = [
     title: 'KareerGrowth announces $10M Grant for Institutional Standardizing',
     desc: 'Supporting colleges in bridging the industry-academia skills gap.',
     action: 'Learn more',
+    link: '/product?tab=Institutes',
     type: 'news'
   }
 ];
@@ -201,9 +211,12 @@ const NewsMarquee = ({ data = recruitmentNews }) => {
                 )}
 
                 <div className="mt-auto">
-                  <button className="flex items-center gap-2 group/btn font-bold text-[13px] border border-black/10 px-5 py-2 rounded-full w-fit hover:bg-black hover:text-white transition-all">
+                  <Link 
+                    to={news.link || '/product'}
+                    className="flex items-center gap-2 group/btn font-bold text-[13px] border border-black/10 px-5 py-2 rounded-full w-fit hover:bg-black hover:text-white transition-all cursor-pointer"
+                  >
                     {news.action} <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -472,9 +485,12 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
               <div className="p-5 flex flex-col h-[45%]">
                 <h3 className="text-lg font-bold text-perk-black mb-1.5 tracking-tighter leading-tight">{card.title}</h3>
                 <p className="text-[12px] text-perk-black/60 font-medium leading-relaxed mb-auto line-clamp-2">{card.desc}</p>
-                <button className="flex items-center gap-2 font-bold text-[11px] border border-perk-black/10 px-4 py-1.5 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group mt-2">
+                <Link 
+                  to={`/product?tab=${card.tag}`}
+                  className="flex items-center gap-2 font-bold text-[11px] border border-perk-black/10 px-4 py-1.5 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group mt-2"
+                >
                   Learn more <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -511,7 +527,10 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
                 <ChevronRight size={18} />
               </button>
             </div>
-            <Link to="/product" className="hidden sm:flex items-center gap-2 font-bold text-[13px] border border-black/10 px-8 py-2.5 rounded-full hover:bg-black hover:text-white transition-all shadow-sm group">
+            <Link 
+              to={`/product?tab=${tag}`} 
+              className="hidden sm:flex items-center gap-2 font-bold text-[13px] border border-black/10 px-8 py-2.5 rounded-full hover:bg-black hover:text-white transition-all shadow-sm group"
+            >
               Show all features <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

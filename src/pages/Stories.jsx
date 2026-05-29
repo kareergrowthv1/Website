@@ -4,8 +4,10 @@ import {
   Quote, ArrowUpRight, Award, Landmark, 
   ChevronRight, ArrowRight, Star, Zap, CheckCircle2, GraduationCap
 } from 'lucide-react';
+import { useModalStore } from '../data/useModalStore';
 
 const Stories = () => {
+  const { openDemoModal } = useModalStore();
   const [activeTab, setActiveTab] = useState('all');
 
   const tabs = [
@@ -240,10 +242,16 @@ const Stories = () => {
             Connect your students directly with pre-vetted corporate roles, or filter thousands of candidate portfolios using secure, proctored competency scores.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-3.5 bg-[#bef33e] text-perk-black rounded-full text-[14px] font-bold flex items-center gap-2 hover:opacity-95 transition-opacity shadow-lg">
+            <button 
+              onClick={openDemoModal}
+              className="px-8 py-3.5 bg-[#bef33e] text-perk-black rounded-full text-[14px] font-bold flex items-center gap-2 hover:opacity-95 transition-opacity shadow-lg cursor-pointer"
+            >
               Book a placement demo <ArrowRight size={16} />
             </button>
-            <button className="px-8 py-3.5 bg-transparent border border-white/20 text-white rounded-full text-[14px] font-bold flex items-center gap-2 hover:bg-white/5 transition-colors">
+            <button 
+              onClick={openDemoModal}
+              className="px-8 py-3.5 bg-transparent border border-white/20 text-white rounded-full text-[14px] font-bold flex items-center gap-2 hover:bg-white/5 transition-colors cursor-pointer"
+            >
               Schedule a technical pilot <ChevronRight size={16} />
             </button>
           </div>

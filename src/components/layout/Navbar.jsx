@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, User, ChevronDown, Sparkles, MoveRight } from 'lucide-react';
 import Button from '../ui/Button';
+import { useModalStore } from '../../data/useModalStore';
 
 const Navbar = () => {
+  const { openDemoModal } = useModalStore();
   const [isBannerVisible, setIsBannerVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -95,7 +97,10 @@ const Navbar = () => {
             <button className="text-sm font-bold flex items-center gap-1.5 hover:opacity-70 transition-opacity mr-2 text-perk-black">
               <Globe size={14} className="opacity-60" /> <ChevronDown size={14} className="opacity-40" />
             </button>
-            <button className="bg-primary text-perk-black px-6 py-2.5 rounded-full text-[13px] font-bold border border-perk-black/5 flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+            <button 
+              onClick={openDemoModal}
+              className="bg-primary text-perk-black px-6 py-2.5 rounded-full text-[13px] font-bold border border-perk-black/5 flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm cursor-pointer"
+            >
               Book a demo <MoveRight size={14} />
             </button>
             {/* Get Started Hover Dropdown */}
@@ -206,7 +211,7 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <div className="grid grid-cols-1 gap-3 pt-4 px-2">
-                  <Button variant="primary" className="w-full">Book a demo</Button>
+                  <Button variant="primary" className="w-full" onClick={openDemoModal}>Book a demo</Button>
                   <div className="flex flex-col gap-2 pt-2 border-t border-perk-black/5 mt-2">
                     <p className="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest px-2 mb-1">Get Started</p>
                     <a href="https://candidate.kareergrowth.com/login" target="_blank" rel="noopener noreferrer" className="bg-white text-perk-black px-5 py-3 rounded-xl text-sm font-bold border border-perk-black/5 flex items-center justify-between shadow-sm active:bg-slate-50 transition-colors">

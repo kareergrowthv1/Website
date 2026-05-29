@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import TrustedBanner from '../components/home/TrustedBanner';
 import { productFeatures } from '../data/productFeatures';
+import { useModalStore } from '../data/useModalStore';
+
 const ProductDiscovery = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [searchParams] = useSearchParams();
+  const { openDemoModal, openGetStartedModal } = useModalStore();
 
   const filters = ['All', 'Recruiters', 'Institutes', 'Candidates'];
+
+  useEffect(() => {
+    const tab = searchParams.get('tab');
+    if (tab && filters.includes(tab)) {
+      setActiveFilter(tab);
+    }
+  }, [searchParams]);
 
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);
@@ -43,10 +55,16 @@ const ProductDiscovery = () => {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="flex flex-wrap items-center justify-center gap-3"
           >
-            <button className="px-8 py-3.5 bg-brand-lime text-perk-black rounded-full text-[15px] font-bold flex items-center gap-2 hover:brightness-95 transition-all shadow-md">
+            <button 
+              onClick={openGetStartedModal}
+              className="px-8 py-3.5 bg-brand-lime text-perk-black rounded-full text-[15px] font-bold flex items-center gap-2 hover:brightness-95 transition-all shadow-md cursor-pointer"
+            >
               Get started <ChevronRight size={18} />
             </button>
-            <button className="px-8 py-3.5 bg-transparent border border-perk-black/20 text-perk-black rounded-full text-[15px] font-bold flex items-center gap-2 hover:bg-black/5 transition-colors">
+            <button 
+              onClick={openDemoModal}
+              className="px-8 py-3.5 bg-transparent border border-perk-black/20 text-perk-black rounded-full text-[15px] font-bold flex items-center gap-2 hover:bg-black/5 transition-colors cursor-pointer"
+            >
               Book a demo <ChevronRight size={18} />
             </button>
           </motion.div>

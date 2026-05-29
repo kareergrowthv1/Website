@@ -8,6 +8,8 @@ import Integrations from './pages/Integrations';
 import About from './pages/About';
 import Stories from './pages/Stories';
 import Footer from './components/layout/Footer';
+import DemoModal from './components/ui/DemoModal';
+import GetStartedModal from './components/ui/GetStartedModal';
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
         </Routes>
 
         <Footer />
+
+        {/* Global interactive overlays */}
+        <DemoModal />
+        <GetStartedModal />
       </div>
     </Router>
   );

@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { ChevronDown, ChevronRight, Search, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useModalStore } from '../data/useModalStore';
 
 // Custom CSS styling block for premium floating and hover animations
 const CustomStyleBlock = () => (
@@ -399,6 +400,7 @@ const integrationCards = [
 ];
 
 const Integrations = () => {
+  const { openDemoModal } = useModalStore();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All categories');
   const [selectedPartner, setSelectedPartner] = useState('All partners');
@@ -498,7 +500,10 @@ const Integrations = () => {
               transition={{ duration: 0.8, delay: 0.25 }}
               className="mt-9 flex justify-center"
             >
-              <button className="inline-flex items-center gap-1 bg-[#bef33e] text-black px-7 py-3 rounded-full font-bold text-[16px] hover:brightness-95 transition-all border border-black/5 shadow-sm active:scale-95 duration-150">
+              <button 
+                onClick={openDemoModal}
+                className="inline-flex items-center gap-1 bg-[#bef33e] text-black px-7 py-3 rounded-full font-bold text-[16px] hover:brightness-95 transition-all border border-black/5 shadow-sm active:scale-95 duration-150 cursor-pointer"
+              >
                 Book a demo <ChevronRight size={16} className="stroke-[3]" />
               </button>
             </motion.div>

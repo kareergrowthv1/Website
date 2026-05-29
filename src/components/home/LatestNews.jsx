@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useAnimation, useMotionValue } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
 const newsItems = [
@@ -8,6 +9,7 @@ const newsItems = [
     title: 'Screen 10,000+ candidates in under 5 minutes with AI Agents',
     desc: 'Deploy custom conversational bots to evaluate technical competency, communication skills, and role alignment at scale.',
     action: 'Explore AI Vetting',
+    link: '/product?tab=Recruiters',
     type: 'news'
   },
   {
@@ -15,6 +17,7 @@ const newsItems = [
     title: 'Secure technical coding rounds with advanced gaze tracking',
     desc: 'Eliminate code copying and unauthorized external aid with deep audio-visual anomaly detection and a locked-down browser environment.',
     action: 'See Sandbox',
+    link: '/product?tab=Recruiters',
     type: 'news'
   },
   {
@@ -22,6 +25,7 @@ const newsItems = [
     title: 'Deep semantic profile parsing with 98% matching accuracy',
     desc: 'Go beyond legacy keyword checking. Match complex candidate histories with rich job specs to rank the perfect matches instantly.',
     action: 'Test Parser',
+    link: '/product?tab=Recruiters',
     type: 'news'
   },
   {
@@ -30,6 +34,7 @@ const newsItems = [
     author: 'Marta Jenkins',
     role: 'Lead Talent Acquisition, Deloitte',
     action: 'Watch story',
+    link: '/stories',
     type: 'testimonial',
     logo: (
       <div className="flex items-center gap-1.5 mb-4 group-hover:scale-105 transition-transform origin-left">
@@ -42,6 +47,7 @@ const newsItems = [
     title: 'Transform active code branches into placement-ready metrics',
     desc: 'Automatically crawl public repositories to analyze commit structure, architectural quality, and design decisions to stamp real skill badges.',
     action: 'Build Portfolio',
+    link: '/product?tab=Candidates',
     type: 'news'
   },
   {
@@ -49,6 +55,7 @@ const newsItems = [
     title: 'Coordinate university drives, schedules, and mock prep in one place',
     desc: 'Empower placement committees and campus hiring managers with deep collaborative scheduling and automated resume feedback loops.',
     action: 'Open Portal',
+    link: '/product?tab=Institutes',
     type: 'news'
   }
 ];
@@ -168,19 +175,24 @@ const LatestNews = () => {
           </div>
 
           {/* Mission Statement */}
-          <p className="max-w-2xl text-white/60 text-[18px] md:text-[20px] leading-relaxed font-medium mb-12">
-            We're on a mission to erase shadow work—the work behind work—from every corner of business 
-            so you can focus on what matters: real work with real impact.
+          <p className="max-w-3xl text-white/60 text-[18px] md:text-[20px] leading-relaxed font-medium mb-12">
+            We are on a mission to democratize placement opportunities and eliminate recruitment friction so that universities, candidates, and enterprises can focus on what truly matters: developer skills, coding competency, and matching talent at scale.
           </p>
 
           {/* Buttons */}
           <div className="flex flex-col md:flex-row items-center gap-4">
-            <button className="bg-[#BEF264] text-black font-bold px-10 py-4 rounded-full text-[15px] flex items-center gap-2 hover:bg-[#a3d44d] transition-all shadow-xl">
+            <Link 
+              to="/about"
+              className="bg-[#BEF264] text-black font-bold px-10 py-4 rounded-full text-[15px] flex items-center gap-2 hover:bg-[#a3d44d] transition-all shadow-xl"
+            >
               Get to know us <ChevronRight size={18} />
-            </button>
-            <button className="bg-transparent text-white border border-white/20 font-bold px-10 py-4 rounded-full text-[15px] flex items-center gap-2 hover:bg-white/10 transition-all">
+            </Link>
+            <Link 
+              to="/about"
+              className="bg-transparent text-white border border-white/20 font-bold px-10 py-4 rounded-full text-[15px] flex items-center gap-2 hover:bg-white/10 transition-all"
+            >
               Join the team <ChevronRight size={18} />
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -234,9 +246,12 @@ const LatestNews = () => {
 
                     {/* Action Button */}
                     <div className="mt-auto">
-                      <button className="flex items-center gap-2 group/btn font-bold text-[13px] border border-white text-white px-5 py-2 rounded-full w-fit hover:bg-white hover:text-black transition-all shadow-sm">
+                      <Link 
+                        to={news.link}
+                        className="flex items-center gap-2 group/btn font-bold text-[13px] border border-white text-white px-5 py-2 rounded-full w-fit hover:bg-white hover:text-black transition-all shadow-sm"
+                      >
                         {news.action} <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
+                      </Link>
                     </div>
 
                   </div>
