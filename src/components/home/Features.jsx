@@ -314,9 +314,9 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
   const tag = tagMap[persona] || 'Recruiters';
 
   const headlines = {
-    Recruitment: { headline: 'Automate your entire hiring funnel', subtext: 'From screening to final vetting, KareerGrowth handles the heavy lifting so you can focus on the best talent.' },
-    Institute:   { headline: 'Scale your campus placements',       subtext: 'Unified tracking and industry-grade proctoring for every student in your institution.' },
-    Candidates:  { headline: 'Accelerate your career',             subtext: 'Smart matching, verified profiles, and skill-building tools — all in one place.' },
+    Recruitment: { headline: 'Automate your hiring funnel with AI', subtext: 'From screening to final vetting, KareerGrowth handles the heavy lifting so you can focus on the best talent.' },
+    Institute:   { headline: 'Scale your campus placements with AI',       subtext: 'Unified tracking and industry-grade proctoring for every student in your institution.' },
+    Candidates:  { headline: 'Accelerate your career with AI',             subtext: 'Smart matching, verified profiles, and skill-building tools — all in one place.' },
   };
 
   const { headline, subtext } = headlines[persona] || headlines.Recruitment;

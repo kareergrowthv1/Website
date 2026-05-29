@@ -471,9 +471,9 @@ const Integrations = () => {
           <div className="relative z-20 max-w-4xl mx-auto text-center px-4 flex flex-col items-center justify-center">
             {/* Consistent homepage headline font styling */}
             <h1 className="title-huge text-perk-black text-center font-medium tracking-[-0.04em] leading-[1.05]">
-              Sync your apps.
+              AI-Powered Integrations.
               <br />
-              Streamline your system.
+              Sync & Streamline with AI.
             </h1>
             <p className="mt-7 text-[16px] sm:text-[18px] text-[#5f5f59] max-w-[580px] mx-auto leading-[1.4] tracking-tight">
               Browse our marketplace for tools that make travel for work even simpler and smarter—from onboarding to invoicing. Just download, connect, and you're all set.

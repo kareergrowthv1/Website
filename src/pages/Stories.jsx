@@ -46,11 +46,10 @@ const Stories = () => {
       {/* Hero Header */}
       <section className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 py-16 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="text-xs md:text-sm font-bold bg-brand-lime px-4 py-1.5 rounded-full uppercase tracking-wider select-none">Placement Victories</span>
-          <h1 className="title-huge mt-6 font-medium tracking-[-0.04em] leading-[1.05]">
-            Success Stories.
+          <h1 className="title-huge mt-0 font-medium tracking-[-0.04em] leading-[1.05]">
+            AI Success Stories.
             <br />
-            High-velocity hires.
+            AI-Driven High-Velocity Hires.
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
             Discover how leading engineering institutes, multinational corporations, and stellar students fast-track opportunities using KareerGrowth's unified assessment ecosystem.

@@ -19,10 +19,10 @@ const ProductDiscovery = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-[90px] font-bold text-perk-black mb-8 tracking-tight leading-[0.9] text-center"
+            className="title-huge mt-0 font-medium tracking-[-0.04em] leading-[1.05] text-center text-perk-black mb-8"
           >
-            Get down to business<br />with the power of<br />
-            <span className="text-perk-black/30">one platform</span>
+            Get down to business<br />with our AI-Powered<br />
+            <span className="text-perk-black/30">Career Acceleration Platform</span>
           </motion.h1>
 
           <motion.p
@@ -60,9 +60,9 @@ const ProductDiscovery = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-perk-black mb-6 tracking-tight leading-[1.0]"
+            className="text-4xl md:text-6xl font-medium text-perk-black mb-6 tracking-[-0.04em] leading-[1.05]"
           >
-            One connected platform for<br />hiring, placements, and careers
+            One connected AI platform for<br />hiring, placements, and careers
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ const ProductDiscovery = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
               <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-brand-lime group-hover:border-brand-lime transition-all duration-300 shadow-lg">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="white" className="translate-x-0.5 group-hover:fill-perk-black transition-colors duration-300">
-                  <path d="M8 5.14v14l11-7-11-7z"/>
+                  <path d="M8 5.14v14l11-7-11-7z" />
                 </svg>
               </div>
               <p className="text-white/70 text-[13px] font-semibold tracking-wide">Watch platform overview · 2 min</p>
@@ -168,7 +168,7 @@ const ProductDiscovery = () => {
                     <img src="/assets/resume_ranking.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                   </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Smart Resume Ranking</h3>
+                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Smart Resume Ranking</h3>
                   <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Rank applicants using AI-powered scoring and matching systems.</p>
                 </motion.div>
 
@@ -177,7 +177,7 @@ const ProductDiscovery = () => {
                     <img src="/assets/interview_management.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                   </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Interview Management System</h3>
+                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Interview Management System</h3>
                   <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Manage interview scheduling, tracking, and candidate evaluations.</p>
                 </motion.div>
 
@@ -195,7 +195,7 @@ const ProductDiscovery = () => {
                     <img src="/assets/assessment_platform.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                   </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Candidate Assessment Platform</h3>
+                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Candidate Assessment Platform</h3>
                   <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Create technical, aptitude, and role-based assessments for hiring.</p>
                 </motion.div>
               </div>
@@ -212,7 +212,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/placement_dashboard.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
-                <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Student Placement Management</h3>
+                <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">AI Student Placement Management</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Manage student profiles, placements, applications, and outcomes centrally.</p>
               </motion.div>
 
@@ -221,7 +221,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/campus_recruitment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
-                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Campus Recruitment Platform</h3>
+                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Campus Recruitment Platform</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Connect students directly with recruiters and hiring partners.</p>
               </motion.div>
 
@@ -230,7 +230,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/assessment_platform.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
-                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Student Skill Assessments</h3>
+                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Student Skill Assessments</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Evaluate technical, aptitude, and communication skills effectively.</p>
               </motion.div>
 
@@ -239,7 +239,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/recruitment_analytics.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
-                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Placement Analytics Dashboard</h3>
+                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Placement Analytics Dashboard</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Track placement performance, hiring trends, and student progress.</p>
               </motion.div>
 
@@ -255,7 +255,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/skill_gap_analyzer.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
-                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Skill Gap Analyzer</h3>
+                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Skill Gap Analyzer</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Discover missing skills and get recommendations to improve job readiness.</p>
               </motion.div>
 
@@ -264,7 +264,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/candidate_database.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
-                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Profile Optimization Assistant</h3>
+                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Profile Optimization Assistant</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6">Improve visibility with smart suggestions to build stronger candidate profiles. Our platform evaluates your details and guides you to showcase your best verified strengths to employers.</p>
                 <button className="mt-4 px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
               </motion.div>
@@ -274,7 +274,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/candidate_screening.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
-                <h3 className="text-6xl font-bold text-perk-black mb-auto tracking-tighter leading-[0.9]">Personalized Job Recommendations</h3>
+                <h3 className="text-5xl font-bold text-perk-black mb-auto tracking-tighter leading-[0.9]">AI Personalized Job Recommendations</h3>
                 <div className="mt-4 pt-10">
                   <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Get curated job suggestions based on skills, resume, and preferences.</p>
                   <button className="px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
@@ -295,7 +295,7 @@ const ProductDiscovery = () => {
                     <img src="/assets/document_export.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                   </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Resume & Document Export Center</h3>
+                  <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">AI Resume & Document Export Center</h3>
                   <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-4">Download resumes, cover letters, and reports in multiple formats instantly. Keep all your application documents structured, optimized, and ready to share.</p>
                   <ul className="space-y-2 mb-4">
                     {[
@@ -306,7 +306,7 @@ const ProductDiscovery = () => {
                     ].map((point, i) => (
                       <li key={i} className="flex items-start gap-2 text-[12px] font-semibold text-perk-black/70">
                         <span className="mt-0.5 w-4 h-4 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
-                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                         </span>
                         {point}
                       </li>
@@ -323,7 +323,7 @@ const ProductDiscovery = () => {
                     <img src="/assets/automated_communication.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                   </div>
-                  <h3 className="text-3xl font-bold text-perk-black mb-4 tracking-tighter leading-[1.0]">Smart Follow-Up Assistant</h3>
+                  <h3 className="text-3xl font-bold text-perk-black mb-4 tracking-tighter leading-[1.0]">AI Smart Follow-Up Assistant</h3>
                   <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Manage recruiter follow-ups using reminders and prebuilt communication templates.</p>
                 </motion.div>
 
@@ -332,7 +332,7 @@ const ProductDiscovery = () => {
                     <img src="/assets/campus_recruitment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                   </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Recruiter Collaboration Portal</h3>
+                  <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">AI Recruiter Collaboration Portal</h3>
                   <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Allow institutes and companies to collaborate for hiring and events.</p>
                 </motion.div>
               </div>
@@ -343,7 +343,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/workflow_automation.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                 </div>
-                <h3 className="text-5xl font-bold text-perk-black mb-6 tracking-tighter leading-[0.9]">Hiring Workflow Automation</h3>
+                <h3 className="text-5xl font-bold text-perk-black mb-6 tracking-tighter leading-[0.9]">AI Hiring Workflow Automation</h3>
                 <p className="text-[15px] text-perk-black/60 font-medium leading-relaxed mb-8 line-clamp-6">Reduce manual effort with automated recruitment workflows and approvals.</p>
                 <button className="mt-4 px-8 py-3 bg-transparent border border-perk-black/20 rounded-full text-[15px] font-bold flex items-center gap-2 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={18} /></button>
               </motion.div>
@@ -360,7 +360,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/video_interview.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                 </div>
-                <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">Video Interview Platform</h3>
+                <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">AI Video Interview Platform</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Conduct AI-powered video interviews with automated insights and analysis.</p>
                 <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
               </motion.div>
@@ -370,7 +370,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/smart_cover_letter.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
-                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Smart Cover Letter Generator</h3>
+                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Smart Cover Letter Generator</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Generate personalized cover letters instantly for every job application.</p>
                 <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
               </motion.div>
@@ -380,7 +380,7 @@ const ProductDiscovery = () => {
                   <img src="/assets/recruitment_analytics.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
-                <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">Placement Success Reports</h3>
+                <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">AI Placement Success Reports</h3>
                 <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Generate reports for placements, assessments, and recruitment activities.</p>
                 <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
               </motion.div>
@@ -394,24 +394,24 @@ const ProductDiscovery = () => {
               {productFeatures
                 .filter(f => ![
                   'AI Candidate Screening',
-                  'Smart Resume Ranking',
-                  'Interview Management System',
+                  'AI Smart Resume Ranking',
+                  'AI Interview Management System',
                   'AI Resume Builder',
-                  'Candidate Assessment Platform',
-                  'Student Placement Management',
-                  'Campus Recruitment Platform',
-                  'Student Skill Assessments',
-                  'Placement Analytics Dashboard',
-                  'Skill Gap Analyzer',
-                  'Profile Optimization Assistant',
-                  'Personalized Job Recommendations',
-                  'Resume & Document Export Center',
-                  'Smart Follow-Up Assistant',
-                  'Recruiter Collaboration Portal',
-                  'Hiring Workflow Automation',
-                  'Video Interview Platform',
-                  'Smart Cover Letter Generator',
-                  'Placement Success Reports'
+                  'AI Candidate Assessment Platform',
+                  'AI Student Placement Management',
+                  'AI Campus Recruitment Platform',
+                  'AI Student Skill Assessments',
+                  'AI Placement Analytics Dashboard',
+                  'AI Skill Gap Analyzer',
+                  'AI Profile Optimization Assistant',
+                  'AI Personalized Job Recommendations',
+                  'AI Resume & Document Export Center',
+                  'AI Smart Follow-Up Assistant',
+                  'AI Recruiter Collaboration Portal',
+                  'AI Hiring Workflow Automation',
+                  'AI Video Interview Platform',
+                  'AI Smart Cover Letter Generator',
+                  'AI Placement Success Reports'
                 ].includes(f.title))
                 .map((card, i) => (
                   <motion.div
