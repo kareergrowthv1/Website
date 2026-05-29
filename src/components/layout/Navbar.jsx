@@ -103,15 +103,15 @@ const Navbar = () => {
               <button className="bg-white text-perk-black px-6 py-2.5 rounded-full text-[13px] font-bold border border-perk-black shadow-sm flex items-center gap-1.5 hover:bg-slate-50 cursor-pointer transition-all duration-200">
                 Get started <ChevronDown size={12} className="group-hover:rotate-180 transition-transform duration-300 opacity-60" />
               </button>
-              
+
               {/* Invisible bridge to prevent dropdown from closing on gap hover */}
               <div className="absolute top-full left-0 right-0 h-2" />
-              
+
               <div className="absolute right-0 mt-2 w-64 bg-white border border-perk-black/5 rounded-[22px] shadow-2xl py-3.5 px-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-50 transform origin-top-right">
-                <a 
-                  href="https://candidate.kareergrowth.com/login" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://candidate.kareergrowth.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-between px-4 py-3 rounded-xl text-[13px] font-bold text-slate-600 hover:text-perk-black hover:bg-[#f5f4eb]/60 transition-all group/item"
                 >
                   <div className="flex flex-col">
@@ -120,13 +120,13 @@ const Navbar = () => {
                   </div>
                   <MoveRight size={14} className="-translate-x-1 opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 text-perk-black" />
                 </a>
-                
+
                 <div className="h-[1px] bg-perk-black/5 my-1" />
-                
-                <a 
-                  href="https://admin.kareergrowth.com/login" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+
+                <a
+                  href="https://admin.kareergrowth.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-between px-4 py-3 rounded-xl text-[13px] font-bold text-slate-600 hover:text-perk-black hover:bg-[#f5f4eb]/60 transition-all group/item"
                 >
                   <div className="flex flex-col">
@@ -138,10 +138,10 @@ const Navbar = () => {
 
                 <div className="h-[1px] bg-perk-black/5 my-1" />
 
-                <a 
-                  href="https://admin.kareergrowth.com/login" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://admin.kareergrowth.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-between px-4 py-3 rounded-xl text-[13px] font-bold text-slate-600 hover:text-perk-black hover:bg-[#f5f4eb]/60 transition-all group/item"
                 >
                   <div className="flex flex-col">
@@ -152,15 +152,14 @@ const Navbar = () => {
                 </a>
               </div>
             </div>
-            
-            <button 
+
+            <button
               onClick={() => {
                 setIsMegaMenuOpen(!isMegaMenuOpen);
                 setIsMobileMenuOpen(false);
               }}
-              className={`p-2.5 rounded-xl transition-all ml-2 cursor-pointer flex items-center justify-center ${
-                isMegaMenuOpen ? 'bg-black/5 text-perk-black' : 'hover:bg-black/5 text-perk-black'
-              }`}
+              className={`p-2.5 rounded-xl transition-all ml-2 cursor-pointer flex items-center justify-center ${isMegaMenuOpen ? 'bg-black/5 text-perk-black' : 'hover:bg-black/5 text-perk-black'
+                }`}
             >
               {isMegaMenuOpen ? <X size={18} /> : (
                 <div className="flex flex-col gap-0.5">
@@ -241,7 +240,7 @@ const Navbar = () => {
             className="w-[92%] mt-3 bg-white rounded-[32px] border border-perk-black/5 p-10 shadow-2xl text-perk-black z-40 overflow-hidden"
           >
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-left">
-              
+
               {/* Column 1: Services */}
               <div>
                 <p className="text-[10px] font-extrabold uppercase text-slate-600 tracking-widest mb-4">Services</p>
