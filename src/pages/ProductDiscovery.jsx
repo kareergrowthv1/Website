@@ -91,7 +91,7 @@ const ProductDiscovery = () => {
               title="KareerGrowth Overview"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              className="absolute w-[116%] h-[116%] left-[-8%] top-[-8%] object-cover pointer-events-none"
+              className="w-full h-full object-cover pointer-events-none"
             ></iframe>
           </motion.div>
         </div>
