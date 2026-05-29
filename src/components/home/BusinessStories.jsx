@@ -3,37 +3,37 @@ import { ChevronRight } from 'lucide-react';
 
 const stories = [
   {
-    logo: 'LUSH',
-    metric: '900',
-    unit: 'travelers',
-    image: '/stories/lush.png',
-    tags: ['Travel', 'Retail', 'North America'],
-    title: 'How Lush reimagined work travel with KareerGrowth',
-    author: 'Sarah Levitin',
-    role: 'Travel and Events Manager North America',
-    action: 'Read more'
+    logo: 'AI Resume',
+    metric: '85%',
+    unit: 'time saved in ATS vetting',
+    image: '/stories/resume.png',
+    tags: ['Resume Builder', 'ATS Vetting', 'AI Scoring'],
+    title: 'How candidates bypass traditional screening with verified AI-score resumes',
+    author: 'Sarah Jenkins',
+    role: 'Product Lead, Student Career Center',
+    action: 'Learn more'
   },
   {
-    logo: 'on',
-    metric: '90%',
-    unit: 'expense automation',
-    image: '/stories/on.png',
-    tags: ['Spend', 'Retail', 'Switzerland'],
-    title: 'How On automates 90% of their expenses with KareerGrowth',
-    author: 'Martin Hoffmann',
-    role: 'CFO, Co-CEO',
-    action: 'Read more'
+    logo: 'Job Match',
+    metric: '92%',
+    unit: 'match accuracy rating',
+    image: '/stories/jobmatch.png',
+    tags: ['AI Placements', 'Corporate Hub', 'Verified Skills'],
+    title: 'Matching top-tier talent into placement drives at companies like Deloitte and Tata Steel',
+    author: 'Rahul Mehta',
+    role: 'Head of Recruiting & Corporate Relations',
+    action: 'Learn more'
   },
   {
-    logo: 'FABLETICS',
-    metric: '60',
-    unit: 'hours saved annually',
-    image: '/stories/fabletics.png',
-    tags: ['Travel', 'Retail', 'North America'],
-    title: 'How KareerGrowth saves Fabletics 60 hours every year on travel management',
-    author: 'Sören Heise',
-    role: 'VP of Financial Planning Europe',
-    action: 'Read more'
+    logo: 'Pipeline',
+    metric: '3.5x',
+    unit: 'increase in interview callbacks',
+    image: '/stories/network.png',
+    tags: ['Direct Pipeline', 'Ecosystem Connect', 'Career Accelerator'],
+    title: 'Bridging the talent gap by connecting verified portfolios to active HR pipelines',
+    author: 'Siddharth Nair',
+    role: 'Director of Academic Placements',
+    action: 'Learn more'
   }
 ];
 
@@ -42,7 +42,7 @@ const BusinessStories = () => {
     <section id="candidates" className="pt-0 pb-16 px-6 bg-white">
       <div className="max-w-[1440px] mx-auto bg-[#F7F6F0] rounded-[48px] pt-8 pb-10 md:pt-14 md:pb-14 px-8 md:px-20">
         <h2 className="text-[36px] md:text-[42px] font-bold text-perk-black text-center mb-16 tracking-tight">
-          Businesses getting the job done
+          Accelerating careers and matching top talent
         </h2>
 
         {/* Asymmetrical Grid: Middle card is wider (Hero style) */}
@@ -62,11 +62,7 @@ const BusinessStories = () => {
                 
                 {/* Logo Overlays */}
                 <div className="absolute top-8 left-8">
-                  {idx === 1 ? (
-                    <span className="text-white font-black text-2xl lowercase tracking-tighter">on</span>
-                  ) : (
-                    <span className="text-white font-black text-2xl uppercase tracking-tighter">{story.logo}</span>
-                  )}
+                  <span className="text-white font-black text-2xl uppercase tracking-tighter">{story.logo}</span>
                 </div>
                 
                 {/* Metric Overlay */}

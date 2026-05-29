@@ -462,18 +462,18 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (idx % cards.length) * 0.1 }}
-              className="flex-shrink-0 w-[280px] md:w-[380px] h-[520px] rounded-[1.75rem] overflow-hidden snap-center relative bg-[#f0f0e8] border border-black/5 group"
+              className="flex-shrink-0 w-[280px] md:w-[380px] h-[400px] rounded-[1.75rem] overflow-hidden snap-center relative bg-[#f0f0e8] border border-black/5 group"
             >
               <div className="relative h-[55%] overflow-hidden">
                 <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2.5s]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
                 <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">{card.tag}</div>
               </div>
-              <div className="p-6 flex flex-col h-[45%]">
-                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">{card.title}</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-auto line-clamp-4">{card.desc}</p>
-                <button className="flex items-center gap-2 font-bold text-xs border border-perk-black/10 px-5 py-2 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group mt-3">
-                  Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <div className="p-5 flex flex-col h-[45%]">
+                <h3 className="text-lg font-bold text-perk-black mb-1.5 tracking-tighter leading-tight">{card.title}</h3>
+                <p className="text-[12px] text-perk-black/60 font-medium leading-relaxed mb-auto line-clamp-2">{card.desc}</p>
+                <button className="flex items-center gap-2 font-bold text-[11px] border border-perk-black/10 px-4 py-1.5 rounded-full w-fit hover:bg-perk-black hover:text-white transition-all group mt-2">
+                  Learn more <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
             </motion.div>
