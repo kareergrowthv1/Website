@@ -4,61 +4,51 @@ import { ChevronRight } from 'lucide-react';
 
 const newsItems = [
   {
-    source: 'CNBC',
-    title: 'KareerGrowth doubles valuation to $2.7 billion, plans fintech push',
-    desc: 'The company is eyeing a major expansion into financial services as it hits a new valuation milestone.',
-    action: 'Read more',
+    source: 'AI VETTING',
+    title: 'Screen 10,000+ candidates in under 5 minutes with AI Agents',
+    desc: 'Deploy custom conversational bots to evaluate technical competency, communication skills, and role alignment at scale.',
+    action: 'Explore AI Vetting',
     type: 'news'
   },
   {
-    source: 'CNBC',
-    title: 'SoftBank-backed firm KareerGrowth acquires U.S. rival and bags $135 million for expansion',
-    desc: 'Strategic acquisition marks a significant step in the company\'s global scaling strategy.',
-    action: 'Read more',
+    source: 'PROCTORING SANDBOX',
+    title: 'Secure technical coding rounds with advanced gaze tracking',
+    desc: 'Eliminate code copying and unauthorized external aid with deep audio-visual anomaly detection and a locked-down browser environment.',
+    action: 'See Sandbox',
     type: 'news'
   },
   {
-    source: 'SKIFT',
-    title: 'KareerGrowth Sees Corporate Travel Bouncing Back, But Not For All',
-    desc: 'Insights into the uneven recovery of business travel across different sectors.',
-    action: 'Read more',
+    source: 'ATS ENGINE',
+    title: 'Deep semantic profile parsing with 98% matching accuracy',
+    desc: 'Go beyond legacy keyword checking. Match complex candidate histories with rich job specs to rank the perfect matches instantly.',
+    action: 'Test Parser',
     type: 'news'
   },
   {
-    source: 'FORBES',
-    title: 'Loyalty Bonus: How A Travel Policy Has Grown In A Constrained Environment',
-    desc: 'Exploring how loyalty programs are adapting to the new corporate landscape.',
-    action: 'Read more',
-    type: 'news'
-  },
-  {
-    source: 'WISE',
-    title: '"People book their own travel without involving us. It gives us a lot of time back. KareerGrowth has..."',
-    author: 'Marta Kutt',
-    role: 'Events & Travel Manager',
-    action: 'Watch',
+    source: 'DELOITTE',
+    title: '"KareerGrowth cut our high-volume operational cycles by 75%. The automatic proctoring has been an absolute game changer for our global campus drives."',
+    author: 'Marta Jenkins',
+    role: 'Lead Talent Acquisition, Deloitte',
+    action: 'Watch story',
     type: 'testimonial',
     logo: (
-      <div className="flex items-center gap-1 mb-4 group-hover:scale-110 transition-transform origin-left">
-          <svg viewBox="0 0 24 24" className="w-8 h-8 fill-black" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 19.74h20L12 2zm0 4.14L18.66 17.6H5.34L12 6.14z"/>
-          </svg>
-          <span className="font-bold text-xl tracking-tighter">Wise</span>
+      <div className="flex items-center gap-1.5 mb-4 group-hover:scale-105 transition-transform origin-left">
+        <span className="font-black text-xl tracking-tight text-white uppercase">Deloitte<span className="text-[#86EFAC]">.</span></span>
       </div>
     )
   },
   {
-    source: 'BLOOMBERG',
-    title: 'KareerGrowth hits $1.3 billion valuation as business trips rebound',
-    desc: 'Market resurgence fuels investor confidence in the travel tech giant\'s future.',
-    action: 'Read more',
+    source: 'AI PORTFOLIOS',
+    title: 'Transform active code branches into placement-ready metrics',
+    desc: 'Automatically crawl public repositories to analyze commit structure, architectural quality, and design decisions to stamp real skill badges.',
+    action: 'Build Portfolio',
     type: 'news'
   },
   {
-    source: 'BBC',
-    title: 'Your team is your product, build a well-oiled machine',
-    desc: 'The critical importance of organizational culture in the era of hybrid work.',
-    action: 'Read more',
+    source: 'CAMPUS PLACEMENT',
+    title: 'Coordinate university drives, schedules, and mock prep in one place',
+    desc: 'Empower placement committees and campus hiring managers with deep collaborative scheduling and automated resume feedback loops.',
+    action: 'Open Portal',
     type: 'news'
   }
 ];
@@ -216,12 +206,7 @@ const LatestNews = () => {
                     {/* Category / Source Label */}
                     <div className="h-10 mb-2">
                       {news.type === 'testimonial' ? (
-                        <div className="flex items-center gap-1 group-hover:translate-x-1 transition-transform origin-left">
-                          <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 19.74h20L12 2zm0 4.14L18.66 17.6H5.34L12 6.14z"/>
-                          </svg>
-                          <span className="font-bold text-lg text-white tracking-tighter">Wise</span>
-                        </div>
+                        news.logo
                       ) : (
                         <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-[0.2em] transition-colors group-hover/card:text-white">
                           {news.source}

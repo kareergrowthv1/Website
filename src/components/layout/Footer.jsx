@@ -102,22 +102,19 @@ const Footer = () => {
               <div>
                 <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Solutions</h4>
                 <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Finance teams</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Travel managers</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Travelers</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Enterprise Hiring</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">SME Recruiting</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">University Drives</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Add-ons</h4>
                 <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Integrations</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">FlexiTravel</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Green Trip</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">VIP Experience</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Group Trip</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Invoice</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">KareerGrowth Card</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Lodge Card</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Custom Proctoring</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">AI Interviewers</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">ATS Integrations</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Skill Badging</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">API Sandbox</a></li>
                 </ul>
               </div>
             </div>
@@ -125,20 +122,17 @@ const Footer = () => {
             <div>
               <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Product</h4>
               <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Expense</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Pay</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Spend management</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Events</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">24/7 support</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Travel alerts</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Flights</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Rail</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Accommodation</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Car rental</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Traveler tracker</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Policies and approvals</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Duty of Care</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Travel reporting</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">AI Screening</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Proctoring Sandbox</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Smart ATS</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Interview Coach</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Placement Portal</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Gaze Tracking</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Plagiarism Blocker</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Analytics Suite</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Mock Rounds</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Bulk Scheduler</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Feedback Loop</a></li>
               </ul>
             </div>
 
@@ -146,20 +140,18 @@ const Footer = () => {
               <div>
                 <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Resources</h4>
                 <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Corporate travel resources</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Corporate travel glossary</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Blog</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Compliance center</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Developer doc</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Placement Glossary</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Hiring Playbook</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Developer API</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">System Status</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Research</h4>
                 <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">The cost of shadow work</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Value of business travel report</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Travel disruption survey</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Travel wellness survey</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Developer Skill Trends</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">Campus Hiring Report</a></li>
+                  <li><a href="#" className="hover:opacity-60 transition-opacity">ATS Accuracy Survey</a></li>
                 </ul>
               </div>
             </div>
@@ -167,9 +159,9 @@ const Footer = () => {
             <div>
               <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Services</h4>
               <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Travel booking</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">SME travel management</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Finance transformation</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Dedicated Support</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Custom Integrations</a></li>
+                <li><a href="#" className="hover:opacity-60 transition-opacity">Ops Transformation</a></li>
               </ul>
             </div>
 
@@ -218,7 +210,7 @@ const Footer = () => {
                 <a href="#" className="text-[13px] font-bold text-black hover:opacity-60 transition-opacity">Legal</a>
               </div>
               <div className="flex flex-col gap-3">
-                <a href="#" className="text-[13px] font-bold text-black hover:opacity-60 transition-opacity">Cardholder terms</a>
+                <a href="#" className="text-[13px] font-bold text-black hover:opacity-60 transition-opacity">Terms of service</a>
                 <a href="#" className="text-[13px] font-bold text-black hover:opacity-60 transition-opacity">Trust center</a>
               </div>
               <div className="flex flex-col gap-3">
@@ -229,7 +221,7 @@ const Footer = () => {
           </div>
 
           <p className="text-[11px] leading-relaxed text-black/40 max-w-5xl mx-auto text-center">
-            Cards provided to EEA residents are issued by Transact Payments Malta Limited and cards provided to UK residents are issued by Transact Payments Limited pursuant to licence by Visa Europe Limited. Transact Payments Malta Limited is duly authorised and regulated by the Malta Financial Services Authority as a Financial Institution under the Financial Institution Act 1994. Registration number C 91879. Transact Payments Limited is authorised and regulated by the Gibraltar Financial Services Commission.
+            KareerGrowth provides an AI-powered talent assessment and screening infrastructure platform. All product names, logos, and brands are property of their respective owners. Technical assessments are proctored and analyzed using advanced machine learning models to ensure maximum integrity and role fit.
           </p>
         </div>
       </div>
