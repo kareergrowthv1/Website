@@ -24,157 +24,157 @@ const About = () => {
     candidates: [
       {
         icon: <FileText className="w-5 h-5 text-indigo-600" />,
-        title: "AI Resume Builder",
-        desc: "Builds ATS-friendly resumes with real-time suggestions and tailored optimization to bypass strict filters."
+        title: "Smart Resume Builder",
+        desc: "Craft a professional, ATS-optimized resume tailored to your target industry using real-time AI suggestions, keyword tailoring, and high-impact action verbs."
       },
       {
         icon: <Sparkles className="w-5 h-5 text-indigo-600" />,
-        title: "Smart Cover Letter Generator",
-        desc: "Crafts highly customized, role-specific cover letters instantly for each target job application."
+        title: "Instant Cover Letter Writer",
+        desc: "Generate highly personalized, role-specific cover letters in seconds that articulate your strengths and perfectly align with the specific job description."
       },
       {
         icon: <LayoutDashboard className="w-5 h-5 text-indigo-600" />,
-        title: "Job Application Dashboard",
-        desc: "Acts as a centralized command center to track application pipelines, status logs, and schedule timelines."
+        title: "Dynamic Application Tracker",
+        desc: "Organize your entire job hunt from one central hub, tracking every application, interview date, salary offer, follow-up status, and upcoming preparation task."
       },
       {
         icon: <TrendingUp className="w-5 h-5 text-indigo-600" />,
-        title: "Skill Gap Analyzer",
-        desc: "Compares current student profiles with live industry requirements to suggest hyper-targeted training pathways."
+        title: "AI Skill Gap Analyzer",
+        desc: "Compare your current profile against real-time job market requirements to instantly map out the missing skills, courses, and certifications you need to succeed."
       },
       {
         icon: <UserCheck className="w-5 h-5 text-indigo-600" />,
-        title: "Profile Optimization Assistant",
-        desc: "Analyzes digital resumes and LinkedIn profiles to offer structured tips that increase organic visibility."
+        title: "Profile Visibility Booster",
+        desc: "Transform your professional profile into a talent magnet with smart, actionable suggestions that maximize your visibility to active recruiters and headhunters."
       },
       {
         icon: <Video className="w-5 h-5 text-indigo-600" />,
-        title: "AI Mock Interview Platform",
-        desc: "Conducts realistic simulated video interviews with deep AI metrics covering content, speed, and delivery."
+        title: "Interactive Interview Coach",
+        desc: "Master your next interview by practicing in realistic role-specific simulations, receiving instant feedback on your answers, tone, vocabulary, and delivery."
       },
       {
         icon: <BarChart3 className="w-5 h-5 text-indigo-600" />,
-        title: "Career Analytics Dashboard",
-        desc: "Provides clear analytics on success rates, competency progression, and application efficiency."
+        title: "Personal Career Dashboard",
+        desc: "Visualize your application funnel, analyze response rates across different industries, and discover trends that reveal which strategies yield the most interviews."
       },
       {
         icon: <Download className="w-5 h-5 text-indigo-600" />,
-        title: "Resume & Document Export Center",
-        desc: "Generates industry-grade PDFs, portfolios, and diagnostic assessment reports with single-click downloads."
+        title: "Document Export Hub",
+        desc: "Export your application documents and skill reports in clean, high-fidelity formats like PDF and DOCX, or share dynamic, secure web links with hiring managers."
       },
       {
         icon: <MailOpen className="w-5 h-5 text-indigo-600" />,
         title: "Smart Follow-Up Assistant",
-        desc: "Automates post-interview check-ins with recruiters using prebuilt communication schedules and templates."
+        desc: "Never miss an opportunity by using smart schedule reminders, follow-up triggers, and professionally drafted email templates tailored for post-interview outreach."
       },
       {
         icon: <Briefcase className="w-5 h-5 text-indigo-600" />,
-        title: "Personalized Job Recommendations",
-        desc: "Curates tailored job matching recommendations based on actual technical and behavioral competencies."
+        title: "AI Job Recommendations",
+        desc: "Receive daily, highly relevant job matches that perfectly align with your verified skills, experience level, career aspirations, and salary expectations."
       }
     ],
     recruiters: [
       {
         icon: <Search className="w-5 h-5 text-emerald-600" />,
         title: "AI Candidate Screening",
-        desc: "Scours application lists to immediately surface candidates matching exact technical requirements."
+        desc: "Streamline your hiring funnel with intelligent AI screening that instantly parses, analyzes, and shortlists top applicants based on multi-dimensional skill profiles and precise job criteria."
       },
       {
         icon: <Award className="w-5 h-5 text-emerald-600" />,
-        title: "Smart Resume Ranking",
-        desc: "Grades incoming talent using high-precision scoring parameters rather than primitive keywords."
+        title: "Smart Resume Match & Ranking",
+        desc: "Eliminate manual sorting with smart ranking algorithms that evaluate and score applicant resumes against your technical requirements, experience level, and cultural fit metrics."
       },
       {
         icon: <ClipboardCheck className="w-5 h-5 text-emerald-600" />,
-        title: "Candidate Assessment Platform",
-        desc: "Configures industry-grade tech assessments, cognitive exams, and communication test sequences."
+        title: "Intelligent Skills Assessment",
+        desc: "Design and launch customized technical tests, behavioral assessments, and cognitive challenges to objectively evaluate and verify candidate competencies before interviewing."
       },
       {
         icon: <Calendar className="w-5 h-5 text-emerald-600" />,
-        title: "Interview Management System",
-        desc: "Automates calendar scheduling, tracks interviewer feedback sheets, and manages status changes."
+        title: "Automated Interview Scheduler",
+        desc: "Coordinate seamless interview cycles with automated scheduling, real-time feedback collation, and integrated scorecards that keep hiring managers perfectly aligned."
       },
       {
         icon: <Camera className="w-5 h-5 text-emerald-600" />,
-        title: "Video Interview Platform",
-        desc: "Runs automatic webcam-proctored, AI-scored video screenings for early-round candidate evaluation."
+        title: "Cognitive Video Evaluation",
+        desc: "Conduct asynchronous or live video interviews integrated with speech-to-text transcription, sentiment checks, and automated behavioral insights to speed up screening."
       },
       {
         icon: <PieChart className="w-5 h-5 text-emerald-600" />,
-        title: "Recruitment Analytics Dashboard",
-        desc: "Tracks pipeline velocity, cost-per-hire, screening metrics, and overall recruitment performance."
+        title: "Predictive Hiring Analytics",
+        desc: "Gain powerful intelligence on your hiring operations with real-time analytics tracking applicant flow, cost-per-hire, channel efficiency, and team performance metrics."
       },
       {
         icon: <Send className="w-5 h-5 text-emerald-600" />,
-        title: "Job Posting Management",
-        desc: "Acts as a central manager to draft, publish, and track jobs across dozens of digital channels."
+        title: "Smart Job Posting Optimizer",
+        desc: "Draft high-converting job descriptions using AI optimizations and syndicate them across top-tier job boards and professional networks with a single click."
       },
       {
         icon: <Database className="w-5 h-5 text-emerald-600" />,
-        title: "Candidate Database Management",
-        desc: "Maintains a structured, searchable archival database of profiles with tags, scores, and history."
+        title: "Intelligent Talent CRM",
+        desc: "Build a highly structured, searchable talent pool that categorizes past applicants, tags skills dynamically, and automatically flags passive candidates for new roles."
       },
       {
         icon: <MessageSquare className="w-5 h-5 text-emerald-600" />,
-        title: "Automated Communication System",
-        desc: "Sends real-time pipeline status updates, invitations, and follow-ups to candidate groups."
+        title: "Automated Recruiter Outreach",
+        desc: "Maintain high applicant engagement with personalized, automated email and SMS touchpoints that update candidates on their application status at every stage."
       },
       {
         icon: <Zap className="w-5 h-5 text-emerald-600" />,
         title: "Hiring Workflow Automation",
-        desc: "Cuts out repetitive tasks by automating multi-stage recruitment pipelines and offer approvals."
+        desc: "Accelerate time-to-hire by automating repetitive administrative steps, background checks, document signing, and offer approvals across your entire organization."
       }
     ],
     institutes: [
       {
         icon: <GraduationCap className="w-5 h-5 text-blue-600" />,
-        title: "Student Placement Management",
-        desc: "Provides placement cells with unified portals to track batch profiles, applications, and placement statistics."
+        title: "Smart Placement Command Center",
+        desc: "Empower placement cell officers with a unified workspace to track student registrations, corporate invitations, application progress, and final placement outcomes in real time."
       },
       {
         icon: <MapPin className="w-5 h-5 text-blue-600" />,
-        title: "Campus Recruitment Platform",
-        desc: "Links institutes directly with corporate partners for recruiters to host hiring drives on-campus."
+        title: "AI Campus Recruitment Platform",
+        desc: "Bridge the gap between education and employment by giving top recruiters direct, secure access to your verified student profiles, portfolios, and graduation timelines."
       },
       {
         icon: <FileSpreadsheet className="w-5 h-5 text-blue-600" />,
-        title: "Student Skill Assessments",
-        desc: "Maintains institutional proctored testing setups to evaluate technical and aptitude readiness."
+        title: "Employability Skill Benchmarking",
+        desc: "Benchmark your student cohort's employability with comprehensive assessments covering domain knowledge, coding proficiency, aptitude, and soft skills."
       },
       {
         icon: <LineChart className="w-5 h-5 text-blue-600" />,
-        title: "Placement Analytics Dashboard",
-        desc: "Enables deans to monitor placement progress, department-wise stats, and trending skill gaps."
+        title: "Predictive Placement Analytics",
+        desc: "Visualize historical and real-time placement statistics, company-wise selections, package distributions, and branch performance to refine your institutional strategy."
       },
       {
         icon: <Mic className="w-5 h-5 text-blue-600" />,
-        title: "Mock Interview Platform",
-        desc: "Helps colleges train cohorts with diagnostic mock video screens mimicking actual corporate filters."
+        title: "AI-Powered Mock Interviews",
+        desc: "Provide students with unlimited access to realistic AI-conducted interview simulations tailored to specific roles, with instant speech and body language evaluations."
       },
       {
         icon: <FileSignature className="w-5 h-5 text-blue-600" />,
-        title: "Resume Building Platform",
-        desc: "Enables thousands of students to construct professional, institution-approved ATS resumes instantly."
+        title: "Intelligent Resume Studio",
+        desc: "Provide students with premium, ATS-optimized resume templates and real-time AI copy-editing suggestions to ensure their profiles stand out to top-tier hiring partners."
       },
       {
         icon: <Compass className="w-5 h-5 text-blue-600" />,
-        title: "Industry Readiness Tracking",
-        desc: "Monitors each student's competency progress and maps their readiness scores against real roles."
+        title: "AI Industry Readiness Tracking",
+        desc: "Identify high-potential talent and students who need additional support using predictive readiness scores based on grades, assessment scores, and mock interviews."
       },
       {
         icon: <BookOpen className="w-5 h-5 text-blue-600" />,
-        title: "Training Program Management",
-        desc: "Launches and tracks custom skill-ups, coding cohorts, and industry certifications."
+        title: "Dynamic Curriculum Optimizer",
+        desc: "Design and deliver targeted upskilling courses, certification paths, and bootcamps directly aligned with the current skill demands of the hiring market."
       },
       {
         icon: <Users className="w-5 h-5 text-blue-600" />,
-        title: "Recruiter Collaboration Portal",
-        desc: "Lets deans share student resumes, invite companies, and coordinate corporate events."
+        title: "Corporate Placement Portal",
+        desc: "Facilitate seamless collaboration between placement coordinators and corporate partners for pre-placement talks, guest lectures, hackathons, and campus drives."
       },
       {
         icon: <CheckCircle2 className="w-5 h-5 text-blue-600" />,
-        title: "Placement Success Reports",
-        desc: "Generates ready-to-share PDF reports of batch placement achievements and training outcomes."
+        title: "Automated Placement Audits",
+        desc: "Generate audit-ready, visually rich reports documenting student placement ratios, recruiter feedback, average packages, and skill levels for accreditation."
       }
     ]
   };
