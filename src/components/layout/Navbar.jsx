@@ -251,17 +251,17 @@ const Navbar = () => {
                 <p className="text-[10px] font-extrabold uppercase text-slate-600 tracking-widest mb-4">Services</p>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/product" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/services/candidates" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Candidates Platform
                     </Link>
                   </li>
                   <li>
-                    <Link to="/product" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/services/recruiters" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Recruiters Platform
                     </Link>
                   </li>
                   <li>
-                    <Link to="/product" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/services/institutes" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Colleges/Institutes
                     </Link>
                   </li>
@@ -273,22 +273,22 @@ const Navbar = () => {
                 <p className="text-[10px] font-extrabold uppercase text-slate-600 tracking-widest mb-4">Research</p>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/about" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/research/skill-gap" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Skill Gap Reports
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/research/placement-trends" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Placement Trends
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/research/integrity-standards" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Integrity Standards
                     </Link>
                   </li>
                   <li>
-                    <Link to="/stories" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/research/vetting-studies" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Vetting Case Studies
                     </Link>
                   </li>
@@ -300,22 +300,22 @@ const Navbar = () => {
                 <p className="text-[10px] font-extrabold uppercase text-slate-600 tracking-widest mb-4">Resources</p>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/product" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/resources/ai-resumes" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       AI Resumes
                     </Link>
                   </li>
                   <li>
-                    <Link to="/product" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/resources/mock-interview" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Mock Interview Simulator
                     </Link>
                   </li>
                   <li>
-                    <Link to="/product" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/resources/assessment-prep" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Assessment Prep
                     </Link>
                   </li>
                   <li>
-                    <Link to="/product" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/resources/help-center" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Help Center
                     </Link>
                   </li>
@@ -327,22 +327,22 @@ const Navbar = () => {
                 <p className="text-[10px] font-extrabold uppercase text-slate-600 tracking-widest mb-4">About</p>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/about" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/about/our-story" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Our Story
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/about/core-principles" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Core Principles
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/about/leadership" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Leadership Team
                     </Link>
                   </li>
                   <li>
-                    <Link to="/stories" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/about/placement-success" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Placement Success
                     </Link>
                   </li>
@@ -354,22 +354,22 @@ const Navbar = () => {
                 <p className="text-[10px] font-extrabold uppercase text-slate-600 tracking-widest mb-4">Media and legal</p>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/stories" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/media/news" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       News
                     </Link>
                   </li>
                   <li>
-                    <Link to="/stories" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/media/press-releases" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Press Releases
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/legal/terms" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Legal Terms
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
+                    <Link to="/legal/privacy" onClick={() => setIsMegaMenuOpen(false)} className="text-[14px] font-bold text-perk-black/70 hover:text-perk-black transition-colors">
                       Privacy Policy
                     </Link>
                   </li>

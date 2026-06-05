@@ -1,0 +1,216 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' role='img' aria-labelledby='t d'>
+  <title id='t'>Candidate Career Dashboard Workspace</title>
+  <desc id='d'>Realistic corporate office desk setup with a space-gray laptop displaying a clean candidate job tracker dashboard, a coffee mug, and a notebook, with no human faces or neon colors.</desc>
+  <defs>
+    <!-- Background wall gradient -->
+    <linearGradient id='bgGrad' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#f1f5f9'/>
+      <stop offset='100%' stop-color='#e2e8f0'/>
+    </linearGradient>
+    <!-- Wooden desk gradient -->
+    <linearGradient id='deskGrad' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#85583f'/>
+      <stop offset='100%' stop-color='#583928'/>
+    </linearGradient>
+    <!-- Laptop screen border bezel gradient -->
+    <linearGradient id='bezelGrad' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0%' stop-color='#1e293b'/>
+      <stop offset='100%' stop-color='#0f172a'/>
+    </linearGradient>
+    <!-- Shadow filter for laptop and accessories -->
+    <filter id='dropShadow' x='-10%' y='-10%' width='120%' height='130%'>
+      <feDropShadow dx='0' dy='16' stdDeviation='18' flood-color='#0f172a' flood-opacity='0.15'/>
+    </filter>
+    <!-- Soft plant leaf gradient -->
+    <linearGradient id='leafGrad' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#4d7c0f' stop-opacity='0.6'/>
+      <stop offset='100%' stop-color='#1e3a1e' stop-opacity='0.75'/>
+    </linearGradient>
+    <!-- Coffee mug color gradient -->
+    <linearGradient id='mugGrad' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#ffffff'/>
+      <stop offset='100%' stop-color='#e2e8f0'/>
+    </linearGradient>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width='1600' height='900' fill='url(#bgGrad)'/>
+
+  <!-- Soft blurred office window light shadow (overlay) -->
+  <path d='M-100,-100 L600,-100 L300,900 L-100,900 Z' fill='#ffffff' opacity='0.25' filter='blur(40px)'/>
+
+  <!-- Soft Plant in Background -->
+  <g filter='blur(15px)' opacity='0.55'>
+    <circle cx='80' cy='120' r='140' fill='url(#leafGrad)'/>
+    <circle cx='180' cy='80' r='110' fill='url(#leafGrad)'/>
+    <circle cx='240' cy='190' r='90' fill='url(#leafGrad)'/>
+    <path d='M100,260 Q180,300 240,400 Q140,380 80,320 Z' fill='url(#leafGrad)'/>
+  </g>
+
+  <!-- Desk Surface -->
+  <rect x='0' y='600' width='1600' height='300' fill='url(#deskGrad)'/>
+  <!-- Desk highlight line -->
+  <rect x='0' y='600' width='1600' height='5' fill='#a16a4f' opacity='0.5'/>
+
+  <!-- ==========================================
+       LAPTOP COMPUTER
+       ========================================== -->
+  <!-- Laptop shadow -->
+  <rect x='280' y='120' width='1040' height='500' rx='28' fill='#000000' opacity='0.25' filter='url(#dropShadow)'/>
+
+  <!-- Laptop Screen Lid (Back/Outer Bezel) -->
+  <rect x='270' y='110' width='1060' height='510' rx='24' fill='url(#bezelGrad)' />
+  
+  <!-- Laptop Screen Active Display Area -->
+  <rect x='296' y='136' width='1008' height='458' rx='10' fill='#f8fafc' />
+  
+  <!-- Web Dashboard Header -->
+  <rect x='296' y='136' width='1008' height='54' fill='#ffffff' />
+  <!-- Border under header -->
+  <rect x='296' y='190' width='1008' height='2' fill='#e2e8f0' />
+  <!-- Logo/Brand Mark on Screen -->
+  <circle cx='330' cy='163' r='12' fill='#bef33e' stroke='#1a1a1a' stroke-width='2' />
+  <rect x='354' y='155' width='130' height='16' rx='4' fill='#0f172a' />
+  <rect x='510' y='155' width='70' height='16' rx='8' fill='#f1f5f9' />
+  
+  <!-- Search/Profile in Header -->
+  <rect x='1040' y='151' width='180' height='24' rx='12' fill='#f1f5f9' />
+  <circle cx='1254' cy='163' r='14' fill='#bef33e' />
+
+  <!-- DASHBOARD SIDEBAR -->
+  <rect x='296' y='192' width='80' height='402' fill='#ffffff' />
+  <rect x='375' y='192' width='1' height='402' fill='#e2e8f0' />
+  <!-- Sidebar Active Tab Indicator -->
+  <rect x='296' y='216' width='4' height='40' fill='#bef33e' />
+  <!-- Sidebar Menu Icons -->
+  <rect x='320' y='224' width='24' height='24' rx='6' fill='#bef33e' opacity='0.2'/>
+  <rect x='326' y='230' width='12' height='12' rx='3' fill='#0f172a' />
+  
+  <rect x='322' y='286' width='20' height='20' rx='4' fill='#cbd5e1' />
+  <rect x='322' y='342' width='20' height='20' rx='4' fill='#cbd5e1' />
+  <rect x='322' y='398' width='20' height='20' rx='4' fill='#cbd5e1' />
+
+  <!-- MAIN DASHBOARD CONTENT AREA -->
+  
+  <!-- Left Column: Job Applications List -->
+  <rect x='396' y='212' width='430' height='362' rx='12' fill='#ffffff' filter='url(#dropShadow)'/>
+  
+  <!-- Section Title -->
+  <text x='420' y='244' font-family='Segoe UI, Arial, sans-serif' font-size='18' font-weight='700' fill='#0f172a'>My Job Applications</text>
+  <text x='420' y='264' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='500' fill='#64748b'>Active application pipeline tracking</text>
+
+  <!-- Job Card 1 -->
+  <rect x='412' y='286' width='398' height='76' rx='10' fill='#f8fafc' stroke='#f1f5f9' stroke-width='1'/>
+  <circle cx='452' cy='324' r='20' fill='#bef33e' opacity='0.2'/>
+  <text x='444' y='329' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='700' fill='#0f172a'>G</text>
+  <text x='488' y='318' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='700' fill='#0f172a'>Google</text>
+  <text x='488' y='336' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='500' fill='#64748b'>Software Engineer (L4) — Interviewing</text>
+  <rect x='716' y='312' width='78' height='24' rx='12' fill='#dcfce7'/>
+  <text x='727' y='328' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='700' fill='#15803d'>95% Match</text>
+
+  <!-- Job Card 2 -->
+  <rect x='412' y='374' width='398' height='76' rx='10' fill='#ffffff' stroke='#f1f5f9' stroke-width='1'/>
+  <circle cx='452' cy='412' r='20' fill='#38bdf8' opacity='0.15'/>
+  <text x='444' y='417' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='700' fill='#0369a1'>M</text>
+  <text x='488' y='406' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='700' fill='#0f172a'>Meta</text>
+  <text x='488' y='424' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='500' fill='#64748b'>Frontend Architect — Offer Received</text>
+  <rect x='716' y='400' width='78' height='24' rx='12' fill='#bef33e'/>
+  <text x='727' y='416' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='700' fill='#0f172a'>98% Match</text>
+
+  <!-- Job Card 3 -->
+  <rect x='412' y='462' width='398' height='76' rx='10' fill='#ffffff' stroke='#f1f5f9' stroke-width='1'/>
+  <circle cx='452' cy='500' r='20' fill='#818cf8' opacity='0.15'/>
+  <text x='445' y='505' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='700' fill='#4338ca'>L</text>
+  <text x='488' y='494' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='700' fill='#0f172a'>LinkedIn</text>
+  <text x='488' y='512' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='500' fill='#64748b'>Backend developer intern — Applied</text>
+  <rect x='716' y='488' width='78' height='24' rx='12' fill='#f1f5f9'/>
+  <text x='727' y='504' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='700' fill='#475569'>90% Match</text>
+
+  <!-- Right Column: Candidate Profile & ATS Resume Score -->
+  <rect x='846' y='212' width='434' height='362' rx='12' fill='#ffffff' filter='url(#dropShadow)'/>
+  <text x='870' y='244' font-family='Segoe UI, Arial, sans-serif' font-size='16' font-weight='700' fill='#0f172a'>ATS Resume Optimization</text>
+  <text x='870' y='264' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='500' fill='#64748b'>Live scoring and keyword gap analysis</text>
+
+  <!-- Radial Chart (Mock ATS Score Gauge) -->
+  <circle cx='940' cy='350' r='55' fill='none' stroke='#f1f5f9' stroke-width='12'/>
+  <path d='M940,295 A55,55 0 1,1 890,373' fill='none' stroke='#bef33e' stroke-width='12' stroke-linecap='round'/>
+  <text x='940' y='356' font-family='Segoe UI, Arial, sans-serif' font-size='22' font-weight='800' fill='#0f172a' text-anchor='middle'>95%</text>
+  <text x='940' y='374' font-family='Segoe UI, Arial, sans-serif' font-size='9' font-weight='600' fill='#64748b' text-anchor='middle'>ATS FIT SCORE</text>
+
+  <!-- Detail Checklist -->
+  <rect x='1020' y='298' width='238' height='104' rx='8' fill='#f8fafc'/>
+  <!-- Checklist Item 1 -->
+  <circle cx='1042' cy='322' r='8' fill='#bef33e'/>
+  <path d='M1038,322 L1041,325 L1047,319' fill='none' stroke='#0f172a' stroke-width='2' stroke-linecap='round'/>
+  <text x='1060' y='326' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='600' fill='#334155'>ATS template compliance: OK</text>
+
+  <!-- Checklist Item 2 -->
+  <circle cx='1042' cy='350' r='8' fill='#bef33e'/>
+  <path d='M1038,350 L1041,353 L1047,347' fill='none' stroke='#0f172a' stroke-width='2' stroke-linecap='round'/>
+  <text x='1060' y='354' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='600' fill='#334155'>Core developer skill density: High</text>
+
+  <!-- Checklist Item 3 -->
+  <circle cx='1042' cy='378' r='8' fill='#bef33e'/>
+  <path d='M1038,378 L1041,381 L1047,375' fill='none' stroke='#0f172a' stroke-width='2' stroke-linecap='round'/>
+  <text x='1060' y='382' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='600' fill='#334155'>Keyword optimization completed</text>
+
+  <!-- Competency Radar Mockup Bar Chart -->
+  <text x='870' y='442' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='700' fill='#0f172a'>Candidate Capability Strengths</text>
+  
+  <text x='870' y='472' font-family='Segoe UI, Arial, sans-serif' font-size='10' font-weight='600' fill='#64748b'>Backend Engineering (Python, Go, Node.js)</text>
+  <rect x='870' y='478' width='386' height='8' rx='4' fill='#f1f5f9'/>
+  <rect x='870' y='478' width='372' height='8' rx='4' fill='#bef33e'/>
+
+  <text x='870' y='506' font-family='Segoe UI, Arial, sans-serif' font-size='10' font-weight='600' fill='#64748b'>System Architecture (Cloud, Distributed Systems)</text>
+  <rect x='870' y='512' width='386' height='8' rx='4' fill='#f1f5f9'/>
+  <rect x='870' y='512' width='330' height='8' rx='4' fill='#bef33e'/>
+
+  <text x='870' y='540' font-family='Segoe UI, Arial, sans-serif' font-size='10' font-weight='600' fill='#64748b'>Frontend UI Development (React, TypeScript)</text>
+  <rect x='870' y='546' width='386' height='8' rx='4' fill='#f1f5f9'/>
+  <rect x='870' y='546' width='290' height='8' rx='4' fill='#bef33e'/>
+
+  <!-- Screen Bezel Bottom -->
+  <path d='M270,594 C270,600 278,604 288,604 L1312,604 C1322,604 1330,600 1330,594 L1330,580 L270,580 Z' fill='#0f172a'/>
+  
+  <!-- Laptop Keyboard Base (Aluminium Space-Gray) -->
+  <path d='M180,604 L1420,604 L1450,626 L150,626 Z' fill='#334155'/>
+  <path d='M150,626 L1450,626 L1430,638 L170,638 Z' fill='#475569'/>
+  
+  <!-- Laptop Front Lip Highlight & Trackpad Outline -->
+  <path d='M170,638 L1430,638 L1420,642 L180,642 Z' fill='#1e293b'/>
+  <rect x='700' y='627' width='200' height='10' rx='2' fill='#242e3d' opacity='0.8'/>
+
+  <!-- ==========================================
+       DESK ACCESSORIES
+       ========================================== -->
+
+  <!-- Left: Minimalist White Ceramic Coffee Mug -->
+  <g filter='url(#dropShadow)'>
+    <!-- Handle -->
+    <path d='M120,680 C80,680 80,730 120,730' fill='none' stroke='url(#mugGrad)' stroke-width='14' stroke-linecap='round'/>
+    <!-- Mug Body -->
+    <ellipse cx='140' cy='670' rx='45' ry='12' fill='#8a5c38' /> <!-- Coffee liquid -->
+    <ellipse cx='140' cy='670' rx='50' ry='15' fill='none' stroke='url(#mugGrad)' stroke-width='6' /> <!-- Mug Rim -->
+    <path d='M90,670 C90,750 190,750 190,670 Z' fill='url(#mugGrad)'/>
+    <!-- Transparent Coffee Steam -->
+    <path d='M130,640 Q120,610 140,580 T130,530' fill='none' stroke='#ffffff' stroke-width='4' stroke-linecap='round' opacity='0.15' filter='blur(2px)'/>
+    <path d='M150,645 Q160,620 145,595 T155,545' fill='none' stroke='#ffffff' stroke-width='3' stroke-linecap='round' opacity='0.12' filter='blur(2px)'/>
+  </g>
+
+  <!-- Right: Premium Notebook and Pen -->
+  <g filter='url(#dropShadow)'>
+    <!-- Notebook Cover -->
+    <rect x='1120' y='650' width='320' height='210' rx='14' fill='#27272a' transform='rotate(-8, 1280, 755)'/>
+    <!-- Gold Cover Spine -->
+    <rect x='1120' y='650' width='16' height='210' fill='#bef33e' transform='rotate(-8, 1280, 755)'/>
+    <!-- Pages peeking out -->
+    <rect x='1138' y='652' width='298' height='204' rx='10' fill='#fef08a' opacity='0.3' transform='rotate(-8, 1280, 755)'/>
+    <rect x='1136' y='654' width='298' height='200' rx='10' fill='#fafaf9' transform='rotate(-8, 1280, 755)'/>
+    
+    <!-- Pen lying diagonally across the notebook -->
+    <rect x='1220' y='710' width='180' height='7' rx='3' fill='#bef33e' transform='rotate(18, 1310, 713)'/>
+    <polygon points='1400,713 1412,710 1400,707' fill='#1e293b' transform='rotate(18, 1310, 713)'/>
+    <!-- Pen metal clip -->
+    <rect x='1250' y='709' width='35' height='2' fill='#f3f4f6' transform='rotate(18, 1310, 713)'/>
+  </g>
+</svg>

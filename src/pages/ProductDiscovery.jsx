@@ -150,7 +150,7 @@ const ProductDiscovery = () => {
                 className="lg:col-span-5 bg-brand-lime rounded-[25px] p-5 flex flex-col items-start text-left relative overflow-hidden group min-h-[450px] border border-black/5"
               >
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[90%] h-[55%] flex items-center justify-center p-2 z-10 pointer-events-none">
-                  <img src="/assets/candidate_screening_realistic.svg" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                  <img src="/assets/recruiter_candidate_screening.png" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
                 </div>
                 <div className="z-20 mt-auto w-full">
                   <div className="inline-block px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm mb-3">Recruiters</div>
@@ -166,7 +166,7 @@ const ProductDiscovery = () => {
               <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                   <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/resume_ranking.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                    <img src="/assets/recruiter_resume_ranking.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                   </div>
                   <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Smart Resume Match & Ranking</h3>
@@ -175,7 +175,7 @@ const ProductDiscovery = () => {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                   <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/interview_management.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                    <img src="/assets/recruiter_interview_scheduler.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                   </div>
                   <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Automated Interview Scheduler</h3>
@@ -184,7 +184,7 @@ const ProductDiscovery = () => {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                   <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/ai_resume_builder.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                    <img src="/assets/candidate_resume_builder.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                   </div>
                   <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Smart Resume Builder</h3>
@@ -193,7 +193,7 @@ const ProductDiscovery = () => {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                   <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/assessment_platform.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                    <img src="/assets/recruiter_skills_assessment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                   </div>
                   <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Intelligent Skills Assessment</h3>
@@ -210,7 +210,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/placement_dashboard.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/institute_placement_center.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
                 <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Smart Placement Command Center</h3>
@@ -219,7 +219,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/campus_recruitment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/institute_campus_recruitment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
                 <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Campus Recruitment Platform</h3>
@@ -228,7 +228,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/assessment_platform.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/institute_skill_benchmarking.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
                 <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Employability Skill Benchmarking</h3>
@@ -237,7 +237,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/recruitment_analytics.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/institute_placement_analytics.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
                 <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Predictive Placement Analytics</h3>
@@ -253,7 +253,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-6 aspect-square w-full relative">
-                  <img src="/assets/skill_gap_analyzer.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/candidate_skill_analyzer.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
                 <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Skill Gap Analyzer</h3>
@@ -262,7 +262,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-6 aspect-video w-full relative">
-                  <img src="/assets/candidate_database.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/candidate_profile_booster.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
                 <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Profile Visibility Booster</h3>
@@ -272,7 +272,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-8 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-8 aspect-video w-full relative">
-                  <img src="/assets/candidate_screening.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/candidate_job_recommendations.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
                 <h3 className="text-5xl font-bold text-perk-black mb-auto tracking-tighter leading-[0.9]">AI Job Recommendations</h3>
@@ -293,7 +293,7 @@ const ProductDiscovery = () => {
               <div className="lg:col-span-3 flex flex-col gap-4">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-5 border border-black/5 text-left flex-1 group">
                   <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/document_export.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                    <img src="/assets/candidate_export_hub.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                   </div>
                   <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Document Export Hub</h3>
@@ -321,7 +321,7 @@ const ProductDiscovery = () => {
               <div className="lg:col-span-3 flex flex-col gap-4">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-5 border border-black/5 text-left flex-1 group">
                   <div className="rounded-[20px] overflow-hidden mb-6 aspect-video w-full relative">
-                    <img src="/assets/automated_communication.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                    <img src="/assets/candidate_followup_assistant.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                   </div>
                   <h3 className="text-3xl font-bold text-perk-black mb-4 tracking-tighter leading-[1.0]">Smart Follow-Up Assistant</h3>
@@ -330,7 +330,7 @@ const ProductDiscovery = () => {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                   <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/campus_recruitment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                    <img src="/assets/institute_corporate_portal.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                     <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                   </div>
                   <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Corporate Placement Portal</h3>
@@ -341,7 +341,7 @@ const ProductDiscovery = () => {
               {/* Right Hero Card */}
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} className="lg:col-span-6 bg-[#f0f0e8] rounded-[25px] p-6 flex flex-col items-start border border-black/5 text-left group">
                 <div className="rounded-[20px] overflow-hidden mb-10 aspect-video w-full relative">
-                  <img src="/assets/workflow_automation.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 shadow-xl" />
+                  <img src="/assets/recruiter_workflow_automation.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                 </div>
                 <h3 className="text-5xl font-bold text-perk-black mb-6 tracking-tighter leading-[0.9]">Hiring Workflow Automation</h3>
@@ -358,7 +358,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-8 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-8 aspect-video w-full relative">
-                  <img src="/assets/video_interview.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/recruiter_video_evaluation.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
                 </div>
                 <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">Cognitive Video Evaluation</h3>
@@ -368,7 +368,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-6 aspect-square w-full relative">
-                  <img src="/assets/smart_cover_letter.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/candidate_cover_letter.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                 </div>
                 <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Instant Cover Letter Writer</h3>
@@ -378,7 +378,7 @@ const ProductDiscovery = () => {
 
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-8 flex flex-col items-start border border-black/5 text-left h-full group">
                 <div className="rounded-[20px] overflow-hidden mb-8 aspect-video w-full relative">
-                  <img src="/assets/recruitment_analytics.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
+                  <img src="/assets/institute_placement_audits.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
                   <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
                 </div>
                 <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">Automated Placement Audits</h3>
