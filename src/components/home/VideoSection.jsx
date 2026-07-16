@@ -55,17 +55,18 @@ const VideoSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-7xl font-bold text-perk-black mb-4 tracking-tight"
+            className="title-huge text-perk-black leading-tight mb-4"
           >
-            Real talent. Real<br /> growth. Real impact.
+            AI-powered hiring, end to end.
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-perk-black/60 leading-relaxed font-medium"
           >
-            The endless screening and rescheduling for recruiters, the repetitive applications and feedback lag for students, the manual coordination and data silos for colleges. We call this Recruitment Friction. It’s the work behind the hire—the hidden friction that slows down growth and costs companies, students, and institutions more than they realize.
+            Smart AI interviews, resume tools, and career insights — all in one platform.<br />
+            Built for recruiters, colleges, and candidates who want results, not red tape.
           </motion.p>
         </div>
 

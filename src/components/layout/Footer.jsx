@@ -71,112 +71,72 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex gap-3">
-                <div className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
-                  <Apple size={18} fill="white" />
-                  <div className="text-[10px] leading-none uppercase font-bold">
-                    Download on the<br /><span className="text-[14px]">App Store</span>
-                  </div>
-                </div>
-                <div className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
-                  <Play size={18} fill="white" />
-                  <div className="text-[10px] leading-none uppercase font-bold">
-                    Get it on<br /><span className="text-[14px]">Google Play</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-black/5 px-4 py-2.5 rounded-full flex items-center gap-3 cursor-pointer hover:bg-black/10 transition-colors">
-                <Languages size={18} />
-                <span className="text-[14px] font-bold">English</span>
-                <ChevronDown size={14} />
-              </div>
             </div>
           </div>
 
-          <div className="h-[1px] bg-black/10 mb-20" />
+          <div className="h-[1px] bg-black/10" />
 
-          {/* Link Matrix */}
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-16">
-            <div className="flex flex-col gap-12">
-              <div>
-                <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Solutions</h4>
-                <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Enterprise Hiring</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">SME Recruiting</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">University Drives</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Add-ons</h4>
-                <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Custom Proctoring</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">AI Interviewers</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">ATS Integrations</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Skill Badging</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">API Sandbox</a></li>
-                </ul>
-              </div>
-            </div>
+          {/* Brand + Link Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 py-16">
 
-            <div>
-              <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Product</h4>
-              <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                <li><a href="#" className="hover:opacity-60 transition-opacity">AI Screening</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Proctoring Sandbox</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Smart ATS</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Interview Coach</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Placement Portal</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Gaze Tracking</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Plagiarism Blocker</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Analytics Suite</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Mock Rounds</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Bulk Scheduler</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Feedback Loop</a></li>
+            {/* Brand Column */}
+            <div className="lg:col-span-4 flex flex-col gap-5 lg:pr-12">
+              <div>
+                <span className="text-[22px] font-black tracking-tight text-black">KareerGrowth</span>
+                <p className="mt-2 text-[13px] leading-relaxed text-black max-w-xs">
+                  AI-powered hiring, assessment, and career growth platform for recruiters, colleges, and candidates.
+                </p>
+              </div>
+              <ul className="flex flex-col gap-2">
+                <li className="text-[12px] text-black">📍 Bangalore, India</li>
+                <li><a href="mailto:hello@kareergrowth.co" className="text-[12px] text-black hover:opacity-60 transition-opacity">✉️ hello@kareergrowth.co</a></li>
+                <li><a href="tel:+917829730090" className="text-[12px] text-black hover:opacity-60 transition-opacity">📞 +91 78297 30090</a></li>
               </ul>
             </div>
 
-            <div className="flex flex-col gap-12">
+            {/* Link Columns */}
+            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
               <div>
-                <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Resources</h4>
-                <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Placement Glossary</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Hiring Playbook</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Developer API</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">System Status</a></li>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-black/40 mb-5">Product</h4>
+                <ul className="flex flex-col gap-3">
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">AI Screening</a></li>
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Mock Interview</a></li>
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Resume Studio</a></li>
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Smart ATS</a></li>
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Proctoring</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Research</h4>
-                <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Developer Skill Trends</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">Campus Hiring Report</a></li>
-                  <li><a href="#" className="hover:opacity-60 transition-opacity">ATS Accuracy Survey</a></li>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-black/40 mb-5">Solutions</h4>
+                <ul className="flex flex-col gap-3">
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Enterprise Hiring</a></li>
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">University Drives</a></li>
+                  <li><a href="/product" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">SME Recruiting</a></li>
+                  <li><a href="/integrations" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Integrations</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-black/40 mb-5">Company</h4>
+                <ul className="flex flex-col gap-3">
+                  <li><a href="/about" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">About Us</a></li>
+                  <li><a href="/stories" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Stories</a></li>
+                  <li><a href="/about" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Careers</a></li>
+                  <li><a href="/about" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Partner Program</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-black/40 mb-5">Legal</h4>
+                <ul className="flex flex-col gap-3">
+                  <li><a href="#" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Privacy Policy</a></li>
+                  <li><a href="#" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Terms of Service</a></li>
+                  <li><a href="#" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Cookie Policy</a></li>
+                  <li><a href="#" className="text-[13px] font-bold text-black/70 hover:text-black transition-colors">Compliance</a></li>
                 </ul>
               </div>
             </div>
 
-            <div>
-              <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">Services</h4>
-              <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Dedicated Support</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Custom Integrations</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Ops Transformation</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-[15px] font-black uppercase tracking-widest text-black/30 mb-8 pt-1">About</h4>
-              <ul className="flex flex-col gap-4 text-[15px] font-bold text-black">
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Company</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Careers</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Partner program</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Customers</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">User reviews</a></li>
-                <li><a href="#" className="hover:opacity-60 transition-opacity">Media center</a></li>
-              </ul>
-            </div>
           </div>
+
         </div>
 
         {/* Massive Branding Typography - Refined letter spacing */}

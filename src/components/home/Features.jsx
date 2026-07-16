@@ -167,7 +167,7 @@ const NewsMarquee = ({ data = recruitmentNews }) => {
 
   return (
     <div 
-      className="w-full relative pb-12 pt-12 border-t border-black/5 bg-white"
+      className="w-full relative pb-12 pt-12 border-t border-black/5 bg-cream"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -286,7 +286,7 @@ const FeatureMarquee = ({ cards, trackWidth, cardW, gap }) => {
         {cards.map((card, idx) => (
           <div
             key={idx}
-            className="flex-shrink-0 rounded-[1.75rem] overflow-hidden bg-[#f0f0e8] border border-black/5 group cursor-pointer"
+            className="flex-shrink-0 rounded-[1.75rem] overflow-hidden bg-white border border-black/10 group cursor-pointer"
             style={{ width: `${cardW}px`, height: '480px' }}
           >
             {/* Image */}
@@ -338,12 +338,6 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
   // Doubled cards for seamless circular loop
   const loopCards = [...cards, ...cards];
 
-  // Auto-advance every 3 seconds — always forward
-  useEffect(() => {
-    const timer = setInterval(() => scroll('next'), 3000);
-    return () => clearInterval(timer);
-  }, [activeIndex, persona]);
-
   const scroll = (direction) => {
     if (!scrollRef.current || cards.length === 0) return;
     const cardWidth = window.innerWidth < 768 ? 280 : 380;
@@ -392,20 +386,10 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
   };
 
   return (
-    <section id={id} className={`pt-8 ${['Recruitment', 'Institute'].includes(persona) ? 'bg-white' : 'bg-cream'} overflow-hidden ${showIntro ? 'pt-0' : ''}`}>
+    <section id={id} className={`pt-8 bg-cream overflow-hidden ${showIntro ? 'pt-0' : ''}`}>
       <div className="max-w-[1440px] mx-auto">
         {showIntro && (
           <div className="flex flex-col items-center text-center mb-6 px-6">
-            <p className="text-sm md:text-[17px] font-medium text-perk-black/80 max-w-4xl mb-6 leading-relaxed">
-              KareerGrowth is the complete vetting engine for today's recruiters, colleges, and candidates. Our human-like AI interviewers conduct four rounds of smart assessments 24/7, providing high-precision data and deep-competency analytics. We simplify the entire hiring journey by removing the manual work and keeping the process fair with institutional-grade security. Whether you are hiring top talent, managing campus placements, or starting your career, KareerGrowth makes the path faster, fairer, and much more intelligent.
-            </p>
-            <Link 
-              to="/product"
-              className="group banner-lime text-perk-black px-8 py-3 rounded-full font-bold text-sm flex items-center gap-2 mb-8 transition-all shadow-md hover:shadow-xl"
-            >
-              Discover our product <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-
             {/* Persona Navigation Pills */}
             <div className="relative flex items-center bg-white p-1.5 rounded-full border border-black/5 shadow-sm mb-4">
               {[
@@ -444,7 +428,7 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-bold text-perk-black mb-6 tracking-tight"
+            className="title-huge text-perk-black leading-tight mb-6"
           >
             {headline}
           </motion.h2>
@@ -471,11 +455,11 @@ const FeatureSection = ({ persona = 'Recruitment', id = 'recruitment', showIntro
           {loopCards.map((card, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (idx % cards.length) * 0.1 }}
-              className="flex-shrink-0 w-[280px] md:w-[380px] h-[400px] rounded-[1.75rem] overflow-hidden snap-center relative bg-[#f0f0e8] border border-black/5 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (idx % cards.length) * 0.08 }}
+              className="flex-shrink-0 w-[280px] md:w-[380px] h-[400px] rounded-[1.75rem] overflow-hidden snap-center relative bg-white border border-black/10 group"
             >
               <div className="relative h-[55%] overflow-hidden">
                 <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2.5s]" />

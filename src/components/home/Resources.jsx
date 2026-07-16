@@ -117,10 +117,10 @@ const Resources = () => {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden border-t border-black/5">
+    <section className="py-24 bg-cream overflow-hidden border-t border-black/5">
       <div className="max-w-[1440px] mx-auto px-6 mb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-perk-black leading-tight mb-4 tracking-tight">Going the extra mile with KareerGrowth</h2>
+          <h2 className="title-huge text-perk-black leading-tight mb-4">Going the extra mile with KareerGrowth</h2>
           <p className="text-slate-500 text-lg font-medium">Resources and insights to help you stay ahead in the modern talent landscape.</p>
         </div>
 

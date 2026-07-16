@@ -16,6 +16,7 @@ const Home = () => {
       <FeatureSection persona="Recruitment" id="recruitment" showIntro={true} />
       
       {/* Institute Section */}
+      <div className="border-t border-black/5" />
       <FeatureSection persona="Institute" id="institute" />
 
       <BusinessStories />

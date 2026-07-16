@@ -39,8 +39,8 @@ const stories = [
 
 const BusinessStories = () => {
   return (
-    <section id="candidates" className="pt-0 pb-16 px-6 bg-white">
-      <div className="max-w-[1440px] mx-auto bg-[#F7F6F0] rounded-[48px] pt-8 pb-10 md:pt-14 md:pb-14 px-8 md:px-20">
+    <section id="candidates" className="pt-0 pb-16 px-6 bg-cream">
+      <div className="max-w-[1440px] mx-auto pt-8 pb-10 md:pt-14 md:pb-14 px-8 md:px-20">
         <h2 className="text-[36px] md:text-[42px] font-bold text-perk-black text-center mb-16 tracking-tight">
           Accelerating careers and matching top talent
         </h2>
@@ -72,18 +72,6 @@ const BusinessStories = () => {
                   </div>
                   <p className="text-[16px] font-medium opacity-95 mt-1">{story.unit}</p>
                 </div>
-              </div>
-
-              {/* Tags Layer */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {story.tags.map((tag, tagIdx) => (
-                  <span 
-                    key={tagIdx} 
-                    className="px-3 py-1.5 bg-white border border-black/5 rounded-full text-[11px] font-bold text-perk-black/70 uppercase tracking-[0.1em]"
-                  >
-                    {tag}
-                  </span>
-                ))}
               </div>
 
               {/* Editorial Content */}

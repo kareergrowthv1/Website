@@ -176,7 +176,7 @@ const LatestNews = () => {
 
           {/* Mission Statement */}
           <p className="max-w-3xl text-white/60 text-[18px] md:text-[20px] leading-relaxed font-medium mb-12">
-            We are on a mission to democratize placement opportunities and eliminate recruitment friction so that universities, candidates, and enterprises can focus on what truly matters: developer skills, coding competency, and matching talent at scale.
+            We're eliminating recruitment friction for universities, candidates, and enterprises — so everyone can focus on what matters: real skills, real matches, real growth.
           </p>
 
           {/* Buttons */}

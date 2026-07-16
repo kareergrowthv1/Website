@@ -22,7 +22,7 @@ const CTA = () => {
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-8 leading-tight">
+          <h2 className="title-huge text-white leading-tight mb-8">
             Ready to redefine your <span className="opacity-80 italic">future?</span>
           </h2>
           <p className="text-xl text-white/80 mb-12">
