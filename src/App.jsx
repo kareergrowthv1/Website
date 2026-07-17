@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import ProductDiscovery from './pages/ProductDiscovery';
 import Integrations from './pages/Integrations';
+import IntegrationDetail from './pages/IntegrationDetail';
 import About from './pages/About';
 import Stories from './pages/Stories';
 import Footer from './components/layout/Footer';
@@ -54,6 +55,7 @@ function App() {
           <Route path="/product" element={<ProductDiscovery />} />
           <Route path="/integrations" element={<Integrations />} />
           <Route path="/integration" element={<Integrations />} />
+          <Route path="/integrations/:slug" element={<IntegrationDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/stories" element={<Stories />} />
 

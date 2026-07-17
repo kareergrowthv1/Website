@@ -1,7 +1,9 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { ChevronDown, ChevronRight, Search, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { useModalStore } from '../data/useModalStore';
+import { toSlug } from './IntegrationDetail';
 
 // Custom CSS styling block for premium floating and hover animations
 const CustomStyleBlock = () => (
@@ -401,6 +403,7 @@ const integrationCards = [
 
 const Integrations = () => {
   const { openDemoModal } = useModalStore();
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All categories');
   const [selectedPartner, setSelectedPartner] = useState('All partners');
@@ -660,7 +663,7 @@ const Integrations = () => {
               </p>
             </div>
             <div className="mt-8">
-              <button className="read-more-btn inline-flex items-center gap-1.5 rounded-full border border-black/40 px-6 py-2.5 text-[15px] font-bold text-[#1a1a1a] hover:bg-black hover:text-white hover:border-black transition-all shadow-sm">
+              <button onClick={() => navigate(`/integrations/${toSlug(card.name)}`)} className="read-more-btn inline-flex items-center gap-1.5 rounded-full border border-black/40 px-6 py-2.5 text-[15px] font-bold text-[#1a1a1a] hover:bg-black hover:text-white hover:border-black transition-all shadow-sm">
                 Read more <ChevronRight size={14} className="stroke-[2.5]" />
               </button>
             </div>
@@ -691,7 +694,7 @@ const Integrations = () => {
                   </p>
                 </div>
                 <div className="mt-8">
-                  <button className="read-more-btn inline-flex items-center gap-1.5 rounded-full border border-black/40 px-6 py-2.5 text-[15px] font-bold text-[#1a1a1a] hover:bg-black hover:text-white hover:border-black transition-all shadow-sm">
+                  <button onClick={() => navigate(`/integrations/${toSlug(card.name)}`)} className="read-more-btn inline-flex items-center gap-1.5 rounded-full border border-black/40 px-6 py-2.5 text-[15px] font-bold text-[#1a1a1a] hover:bg-black hover:text-white hover:border-black transition-all shadow-sm">
                     Read more <ChevronRight size={14} className="stroke-[2.5]" />
                   </button>
                 </div>
@@ -724,7 +727,7 @@ const Integrations = () => {
                   </p>
                 </div>
                 <div className="mt-6">
-                  <button className="read-more-btn inline-flex items-center gap-1.5 rounded-full border border-black/40 px-5 py-2 text-[14px] font-bold text-[#1a1a1a] hover:bg-black hover:text-white hover:border-black transition-all shadow-sm">
+                  <button onClick={() => navigate(`/integrations/${toSlug(card.name)}`)} className="read-more-btn inline-flex items-center gap-1.5 rounded-full border border-black/40 px-5 py-2 text-[14px] font-bold text-[#1a1a1a] hover:bg-black hover:text-white hover:border-black transition-all shadow-sm">
                     Read more <ChevronRight size={12} className="stroke-[2.5]" />
                   </button>
                 </div>
