@@ -134,44 +134,46 @@ const LatestNews = () => {
         {/* Brand Stats CTA (Top of Section) */}
         <div className="mb-16 flex flex-col items-center text-center relative">
           
-          {/* Floating Badges Ribbon */}
-          <div className="relative w-full max-w-4xl min-h-[140px] mb-12">
-            {/* Top Left: 12 offices (Pink) */}
-            <div className="absolute top-0 -left-4 md:left-10 transform -translate-y-1/2">
-              <div className="bg-[#FBCFE8] px-5 py-3 rounded-full flex items-center gap-2 shadow-lg">
-                <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
-                <span className="text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">12 offices globally</span>
+          {/* Floating badges around title — same layout all sizes, smaller on mobile */}
+          <div className="relative w-full max-w-4xl md:min-h-[280px] mb-12">
+
+            {/* Top Left */}
+            <div className="absolute top-0 left-0 md:left-10">
+              <div className="bg-[#FBCFE8] px-2.5 py-1.5 md:px-5 md:py-3 rounded-full flex items-center gap-1.5 md:gap-2 shadow-lg">
+                <div className="w-1.5 h-1.5 rounded-full bg-black/20 flex-shrink-0" />
+                <span className="text-[10px] md:text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">12 offices globally</span>
               </div>
             </div>
 
-            {/* Top Right: 1,800+ employees (Violet) */}
-            <div className="absolute top-6 right-0 md:right-1 transform -translate-y-1/2">
-              <div className="bg-[#C4B5FD] px-5 py-3 rounded-full flex items-center gap-2 shadow-lg">
-                <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
-                <span className="text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">1,800+ employees</span>
+            {/* Top Right */}
+            <div className="absolute top-2 right-2 md:right-1">
+              <div className="bg-[#C4B5FD] px-2.5 py-1.5 md:px-5 md:py-3 rounded-full flex items-center gap-1.5 md:gap-2 shadow-lg">
+                <div className="w-1.5 h-1.5 rounded-full bg-black/20 flex-shrink-0" />
+                <span className="text-[10px] md:text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">1,800+ employees</span>
               </div>
             </div>
 
-            {/* Bottom Left: Founded (Cyan) */}
-            <div className="absolute bottom-6 left-0 md:left-20">
-              <div className="bg-[#A5F3FC] px-5 py-3 rounded-full flex items-center gap-2 shadow-lg">
-                <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
-                <span className="text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">Founded in 2015</span>
-              </div>
-            </div>
-
-            {/* Bottom Right: 10,000+ customers (Orange) */}
-            <div className="absolute bottom-0 right-4 md:right-10">
-              <div className="bg-[#FED7AA] px-5 py-3 rounded-full flex items-center gap-2 shadow-lg">
-                <div className="w-1.5 h-1.5 rounded-full bg-black/20" />
-                <span className="text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">10,000+ customers</span>
-              </div>
-            </div>
-
-            {/* Main Headline */}
-            <h2 className="text-[56px] md:text-[96px] font-bold text-white leading-[0.9] tracking-tighter mt-12 mb-6">
+            {/* Title */}
+            <h2 className="text-[44px] md:text-[96px] font-bold text-white leading-[0.9] tracking-tighter mt-10 md:mt-14 mb-12 md:mb-14">
               Ready to get<br />to work?
             </h2>
+
+            {/* Bottom Left */}
+            <div className="absolute bottom-0 left-2 md:left-20">
+              <div className="bg-[#A5F3FC] px-2.5 py-1.5 md:px-5 md:py-3 rounded-full flex items-center gap-1.5 md:gap-2 shadow-lg">
+                <div className="w-1.5 h-1.5 rounded-full bg-black/20 flex-shrink-0" />
+                <span className="text-[10px] md:text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">Founded in 2015</span>
+              </div>
+            </div>
+
+            {/* Bottom Right */}
+            <div className="absolute bottom-0 right-2 md:right-10">
+              <div className="bg-[#FED7AA] px-2.5 py-1.5 md:px-5 md:py-3 rounded-full flex items-center gap-1.5 md:gap-2 shadow-lg">
+                <div className="w-1.5 h-1.5 rounded-full bg-black/20 flex-shrink-0" />
+                <span className="text-[10px] md:text-[13px] font-bold text-black whitespace-nowrap uppercase tracking-wider">10,000+ customers</span>
+              </div>
+            </div>
+
           </div>
 
           {/* Mission Statement */}

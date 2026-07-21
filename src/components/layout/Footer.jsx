@@ -8,7 +8,10 @@ import {
   Apple,
   Play,
   Languages,
-  ChevronDown
+  ChevronDown,
+  MapPin,
+  Mail,
+  Phone
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -88,9 +91,9 @@ const Footer = () => {
                 </p>
               </div>
               <ul className="flex flex-col gap-2">
-                <li className="text-[12px] text-black">📍 Bangalore, India</li>
-                <li><a href="mailto:hello@kareergrowth.co" className="text-[12px] text-black hover:opacity-60 transition-opacity">✉️ hello@kareergrowth.co</a></li>
-                <li><a href="tel:+917829730090" className="text-[12px] text-black hover:opacity-60 transition-opacity">📞 +91 78297 30090</a></li>
+                <li className="flex items-center gap-2 text-[12px] text-black"><MapPin size={13} className="text-black flex-shrink-0" /> Bangalore, India</li>
+                <li><a href="mailto:hello@kareergrowth.co" className="flex items-center gap-2 text-[12px] text-black hover:opacity-60 transition-opacity"><Mail size={13} className="text-black flex-shrink-0" /> hello@kareergrowth.co</a></li>
+                <li><a href="tel:+917829730090" className="flex items-center gap-2 text-[12px] text-black hover:opacity-60 transition-opacity"><Phone size={13} className="text-black flex-shrink-0" /> +91 78297 30090</a></li>
               </ul>
             </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/home/Hero';
 import VideoSection from '../components/home/VideoSection';
-import FeatureSection from '../components/home/Features';
+import LandingFeatureCards from '../components/home/LandingFeatureCards';
 import BusinessStories from '../components/home/BusinessStories';
 import LatestNews from '../components/home/LatestNews';
 import PostCTA from '../components/home/PostCTA';
@@ -11,16 +11,8 @@ const Home = () => {
     <main className="flex-grow">
       <Hero />
       <VideoSection />
-      
-      {/* Recruiter Section */}
-      <FeatureSection persona="Recruitment" id="recruitment" showIntro={true} />
-      
-      {/* Institute Section */}
-      <div className="border-t border-black/5" />
-      <FeatureSection persona="Institute" id="institute" />
-
+      <LandingFeatureCards />
       <BusinessStories />
-      
       <LatestNews />
       <PostCTA />
     </main>

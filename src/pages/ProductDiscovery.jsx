@@ -1,10 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import TrustedBanner from '../components/home/TrustedBanner';
-import { productFeatures } from '../data/productFeatures';
 import { useModalStore } from '../data/useModalStore';
+
+const FEATURE_CARDS = [
+  {
+    title: 'AI Mock Interview',
+    desc: 'Practice with 4 configurable rounds — Communication, Technical, Aptitude, and HR — with real-time AI feedback and detailed scoring after every session.',
+    image: '/assets/canproducts/mock interview.png',
+    href: '/features/mock-interview',
+  },
+  {
+    title: 'KareerGrowth Hunt',
+    desc: 'All-in-one job search connecting LinkedIn, Indeed, and Naukri — with an application tracker, cover letter builder, CAR tool, salary negotiator, and more.',
+    image: '/assets/canproducts/KareerGwoth Hunt.png',
+    href: '/features/kareergrowth-hunt',
+  },
+  {
+    title: 'Tracker',
+    desc: 'Manage every application, interview, follow-up, and offer from one command centre — Saved, Applied, Active, Preparation, Offered, and Closed.',
+    image: '/assets/canproducts/tracker.png',
+    href: '/features/tracker',
+  },
+  {
+    title: 'Practice Hub',
+    desc: 'Sharpen DSA, coding, and aptitude with structured practice sets, courses, and a knowledge base — all in a full in-browser IDE with no setup required.',
+    image: '/assets/canproducts/practice hub.png',
+    href: '/features/practice-hub',
+  },
+  {
+    title: 'Career Platform',
+    desc: 'Your end-to-end career launchpad — Roadmap, Jobs, Resume, Portfolio, Auto Apply, and My Profile all in one connected place.',
+    image: '/assets/canproducts/career platform.png',
+    href: '/features/career-platform',
+    objectPosition: 'top',
+  },
+  {
+    title: 'Resume Studio',
+    desc: 'Build an ATS-optimised resume with AI suggestions, real-time scoring, and one-click tailoring for any job description you paste.',
+    image: '/assets/canproducts/resume studio.png',
+    href: '/features/resume-studio',
+  },
+  {
+    title: 'Fake Offer Detection',
+    desc: 'Verify any job offer instantly — KareerGrowth cross-checks company details, offer patterns, and known scam signals to keep you protected.',
+    image: '/assets/canproducts/fake offer detections.png',
+    href: '/features/fake-offer-detection',
+  },
+];
 
 const ProductDiscovery = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -134,305 +179,127 @@ const ProductDiscovery = () => {
       </div>
 
       {/* =========================================
-          STATIC BENTO GRID — "All" view only
+          BENTO GRID — "All" view
+          First 7 slots = feature cards, rest = blank
           ========================================= */}
       {activeFilter === 'All' && (
         <div className="space-y-4">
 
-          {/* ROW 1: Hero 1+4 Layout */}
+          {/* ROW 1: Large card (card 1) + 2×2 cluster (cards 2–5) */}
           <div className="max-w-[1440px] mx-auto mb-4">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
 
-              {/* Large Left Card */}
+              {/* Card 1 — large hero slot */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                className="lg:col-span-5 bg-brand-lime rounded-[25px] p-5 flex flex-col items-start text-left relative overflow-hidden group min-h-[450px] border border-black/5"
+                className="lg:col-span-5 bg-[#BEF264] rounded-[25px] p-5 flex flex-col items-start text-left group min-h-[450px] border border-black/5"
               >
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[90%] h-[55%] flex items-center justify-center p-2 z-10 pointer-events-none">
-                  <img src="/assets/recruiter_candidate_screening.png" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+                <div className="rounded-[20px] overflow-hidden mb-5 w-full relative">
+                  <img src={FEATURE_CARDS[0].image} alt={FEATURE_CARDS[0].title} className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-1000" />
                 </div>
-                <div className="z-20 mt-auto w-full">
-                  <div className="inline-block px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm mb-3">Recruiters</div>
-                  <h3 className="text-4xl md:text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">AI Candidate Screening</h3>
-                  <p className="text-[17px] text-perk-black/80 font-medium max-w-xl mb-6 leading-normal line-clamp-6">Streamline your hiring funnel with intelligent AI screening that instantly parses, analyzes, and shortlists top applicants based on multi-dimensional skill profiles and precise job criteria.</p>
-                  <button className="px-8 py-3 bg-brand-lime border border-perk-black rounded-full text-[15px] font-bold flex items-center gap-2 hover:bg-white/20 transition-colors shadow-sm">
-                    Learn more <ChevronRight size={18} />
-                  </button>
-                </div>
-              </motion.div>
+                <div className="w-full">
+                  <h3 className="text-4xl md:text-5xl font-bold text-perk-black mb-3 tracking-tighter leading-[0.9]">{FEATURE_CARDS[0].title}</h3>
+                  <p className="text-[15px] text-perk-black/60 font-medium max-w-xl mb-5 leading-normal">
+                    Practice with 4 configurable rounds. Communication, Technical, Aptitude and HR. Get real-time AI feedback and detailed scoring after every session.
+                  </p>
 
-              {/* Right 2x2 Cluster */}
-              <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                  <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/recruiter_resume_ranking.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Smart Resume Match & Ranking</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Eliminate manual sorting with smart ranking algorithms that evaluate and score applicant resumes against your technical requirements, experience level, and cultural fit metrics.</p>
-                </motion.div>
-
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                  <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/recruiter_interview_scheduler.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Automated Interview Scheduler</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Coordinate seamless interview cycles with automated scheduling, real-time feedback collation, and integrated scorecards that keep hiring managers perfectly aligned.</p>
-                </motion.div>
-
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                  <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/candidate_resume_builder.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Smart Resume Builder</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Craft a professional, ATS-optimized resume tailored to your target industry using real-time AI suggestions, keyword tailoring, and high-impact action verbs.</p>
-                </motion.div>
-
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                  <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/recruiter_skills_assessment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Intelligent Skills Assessment</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Design and launch customized technical tests, behavioral assessments, and cognitive challenges to objectively evaluate and verify candidate competencies before interviewing.</p>
-                </motion.div>
-              </div>
-
-            </div>
-          </div>
-
-          {/* ROW 2: 4-Card Grid */}
-          <div className="max-w-[1440px] mx-auto mb-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/institute_placement_center.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
-                </div>
-                <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Smart Placement Command Center</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Empower placement cell officers with a unified workspace to track student registrations, corporate invitations, application progress, and final placement outcomes in real time.</p>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/institute_campus_recruitment.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
-                </div>
-                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Campus Recruitment Platform</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Bridge the gap between education and employment by giving top recruiters direct, secure access to your verified student profiles, portfolios, and graduation timelines.</p>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/institute_skill_benchmarking.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
-                </div>
-                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Employability Skill Benchmarking</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Benchmark your student cohort's employability with comprehensive assessments covering domain knowledge, coding proficiency, aptitude, and soft skills.</p>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                  <img src="/assets/institute_placement_analytics.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
-                </div>
-                <h3 className="text-xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Predictive Placement Analytics</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Visualize historical and real-time placement statistics, company-wise selections, package distributions, and branch performance to refine your institutional strategy.</p>
-              </motion.div>
-
-            </div>
-          </div>
-
-          {/* ROW 3: 3-Card Layout */}
-          <div className="max-w-[1440px] mx-auto mb-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-6 aspect-square w-full relative">
-                  <img src="/assets/candidate_skill_analyzer.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
-                </div>
-                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">AI Skill Gap Analyzer</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Compare your current profile against real-time job market requirements to instantly map out the missing skills, courses, and certifications you need to succeed.</p>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-6 aspect-video w-full relative">
-                  <img src="/assets/candidate_profile_booster.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
-                </div>
-                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Profile Visibility Booster</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6">Transform your professional profile into a talent magnet with smart, actionable suggestions that maximize your visibility to active recruiters and headhunters. Our platform evaluates your details and guides you to showcase your best verified strengths to employers.</p>
-                <button className="mt-4 px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-8 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-8 aspect-video w-full relative">
-                  <img src="/assets/candidate_job_recommendations.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
-                </div>
-                <h3 className="text-5xl font-bold text-perk-black mb-auto tracking-tighter leading-[0.9]">AI Job Recommendations</h3>
-                <div className="mt-4 pt-10">
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Receive daily, highly relevant job matches that perfectly align with your verified skills, experience level, career aspirations, and salary expectations.</p>
-                  <button className="px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
-                </div>
-              </motion.div>
-
-            </div>
-          </div>
-
-          {/* ROW 4: 5-Card Inverted Matrix */}
-          <div className="max-w-[1440px] mx-auto mb-4">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-
-              {/* Left Column */}
-              <div className="lg:col-span-3 flex flex-col gap-4">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-5 border border-black/5 text-left flex-1 group">
-                  <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/candidate_export_hub.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Document Export Hub</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-4">Export your application documents and skill reports in clean, high-fidelity formats like PDF and DOCX, or share dynamic, secure web links with hiring managers. Keep all your application documents structured, optimized, and ready to share.</p>
-                  <ul className="space-y-2 mb-4">
-                    {[
-                      'Download resumes & cover letters instantly',
-                      'Export industry-standard ATS-friendly PDFs',
-                      'Generate comprehensive skill gap reports',
-                      'Share verified competency profiles via secure links',
-                    ].map((point, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[12px] font-semibold text-perk-black/70">
-                        <span className="mt-0.5 w-4 h-4 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
-                          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4L3 5.5L6.5 2" stroke="#1a1a1a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                        </span>
-                        {point}
-                      </li>
+                  {/* Interview round pills */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {['Communication', 'Technical', 'Aptitude', 'HR / Management'].map(round => (
+                      <span key={round} className="px-4 py-2 bg-white/60 rounded-full text-[13px] font-bold text-perk-black">{round}</span>
                     ))}
-                  </ul>
-                  <button className="mt-2 self-start px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
-                </motion.div>
-              </div>
-
-              {/* Middle Column */}
-              <div className="lg:col-span-3 flex flex-col gap-4">
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-5 border border-black/5 text-left flex-1 group">
-                  <div className="rounded-[20px] overflow-hidden mb-6 aspect-video w-full relative">
-                    <img src="/assets/candidate_followup_assistant.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
                   </div>
-                  <h3 className="text-3xl font-bold text-perk-black mb-4 tracking-tighter leading-[1.0]">Smart Follow-Up Assistant</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Never miss an opportunity by using smart schedule reminders, follow-up triggers, and professionally drafted email templates tailored for post-interview outreach.</p>
-                </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                  <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
-                    <img src="/assets/institute_corporate_portal.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
+                  {/* Feature highlights */}
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    {[
+                      { label: 'Instant scoring', sub: 'Get scored after every answer' },
+                      { label: 'Detailed report', sub: 'Full breakdown post-session' },
+                      { label: 'Company-specific', sub: 'Questions tailored to your target role' },
+                      { label: 'Soft skill analysis', sub: 'Tone, clarity & confidence assessed' },
+                    ].map(f => (
+                      <div key={f.label} className="bg-white/40 rounded-[14px] px-4 py-3">
+                        <p className="text-[13px] font-black text-perk-black leading-snug">{f.label}</p>
+                        <p className="text-[11px] font-medium text-perk-black/55 leading-snug mt-0.5">{f.sub}</p>
+                      </div>
+                    ))}
                   </div>
-                  <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">Corporate Placement Portal</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed line-clamp-6">Facilitate seamless collaboration between placement coordinators and corporate partners for pre-placement talks, guest lectures, hackathons, and campus drives.</p>
-                </motion.div>
-              </div>
 
-              {/* Right Hero Card */}
-              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} className="lg:col-span-6 bg-[#f0f0e8] rounded-[25px] p-6 flex flex-col items-start border border-black/5 text-left group">
-                <div className="rounded-[20px] overflow-hidden mb-10 aspect-video w-full relative">
-                  <img src="/assets/recruiter_workflow_automation.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
+                  <Link to={FEATURE_CARDS[0].href} className="px-8 py-3 bg-white text-perk-black rounded-full text-[15px] font-bold flex items-center gap-2 hover:bg-white/90 transition-all shadow-sm w-fit">
+                    Learn more <ChevronRight size={18} />
+                  </Link>
                 </div>
-                <h3 className="text-5xl font-bold text-perk-black mb-6 tracking-tighter leading-[0.9]">Hiring Workflow Automation</h3>
-                <p className="text-[15px] text-perk-black/60 font-medium leading-relaxed mb-8 line-clamp-6">Accelerate time-to-hire by automating repetitive administrative steps, background checks, document signing, and offer approvals across your entire organization.</p>
-                <button className="mt-4 px-8 py-3 bg-transparent border border-perk-black/20 rounded-full text-[15px] font-bold flex items-center gap-2 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={18} /></button>
               </motion.div>
 
-            </div>
-          </div>
-
-          {/* ROW 5: 3-Card High Fidelity */}
-          <div className="max-w-[1440px] mx-auto mb-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="bg-[#f0f0e8] rounded-[25px] p-8 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-8 aspect-video w-full relative">
-                  <img src="/assets/recruiter_video_evaluation.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Recruiters</div>
-                </div>
-                <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">Cognitive Video Evaluation</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Conduct asynchronous or live video interviews integrated with speech-to-text transcription, sentiment checks, and automated behavioral insights to speed up screening.</p>
-                <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-6 aspect-square w-full relative">
-                  <img src="/assets/candidate_cover_letter.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Candidates</div>
-                </div>
-                <h3 className="text-2xl font-bold text-perk-black mb-3 tracking-tighter leading-tight">Instant Cover Letter Writer</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Generate highly personalized, role-specific cover letters in seconds that articulate your strengths and perfectly align with the specific job description.</p>
-                <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-[#f0f0e8] rounded-[25px] p-8 flex flex-col items-start border border-black/5 text-left h-full group">
-                <div className="rounded-[20px] overflow-hidden mb-8 aspect-video w-full relative">
-                  <img src="/assets/institute_placement_audits.png" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl" />
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">Institutes</div>
-                </div>
-                <h3 className="text-5xl font-bold text-perk-black mb-4 tracking-tighter leading-[0.9]">Automated Placement Audits</h3>
-                <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">Generate audit-ready, visually rich reports documenting student placement ratios, recruiter feedback, average packages, and skill levels for accreditation.</p>
-                <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">Learn more <ChevronRight size={16} /></button>
-              </motion.div>
-
-            </div>
-          </div>
-
-          {/* ROW 6: Remaining productFeatures not already shown above */}
-          <div className="max-w-[1440px] mx-auto mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pb-12">
-              {productFeatures
-                .filter(f => ![
-                  'AI Candidate Screening',
-                  'Smart Resume Match & Ranking',
-                  'Automated Interview Scheduler',
-                  'Smart Resume Builder',
-                  'Intelligent Skills Assessment',
-                  'Smart Placement Command Center',
-                  'AI Campus Recruitment Platform',
-                  'Employability Skill Benchmarking',
-                  'Predictive Placement Analytics',
-                  'AI Skill Gap Analyzer',
-                  'Profile Visibility Booster',
-                  'AI Job Recommendations',
-                  'Document Export Hub',
-                  'Smart Follow-Up Assistant',
-                  'Corporate Placement Portal',
-                  'Hiring Workflow Automation',
-                  'Cognitive Video Evaluation',
-                  'Instant Cover Letter Writer',
-                  'Automated Placement Audits'
-                ].includes(f.title))
-                .map((card, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group"
-                  >
-                    <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative z-10">
-                      <img src={card.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 shadow-xl z-20" />
-                      <div className="absolute top-3 right-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">{card.tag}</div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent group-hover:bg-black/60 transition-colors duration-500 pointer-events-none z-0" />
+              {/* Cards 2–5 — 2×2 cluster */}
+              <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {FEATURE_CARDS.slice(1, 5).map((card, i) => (
+                  <motion.div key={card.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
+                    <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
+                      <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" style={card.objectPosition ? { objectPosition: card.objectPosition } : {}} />
                     </div>
-                    <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight line-clamp-1">{card.title}</h3>
-                    <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-4 line-clamp-6">{card.desc}</p>
-                    <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">
+                    <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">{card.title}</h3>
+                    <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-4 flex-grow line-clamp-3">{card.desc}</p>
+                    <Link to={card.href} className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">
                       Learn more <ChevronRight size={16} />
-                    </button>
+                    </Link>
                   </motion.div>
                 ))}
+              </div>
+
+            </div>
+          </div>
+
+          {/* ROW 2: Cards 6–7 + 2 blank boxes */}
+          <div className="max-w-[1440px] mx-auto mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {FEATURE_CARDS.slice(5, 7).map((card, i) => (
+                <motion.div key={card.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} className="bg-[#f0f0e8] rounded-[25px] p-4 flex flex-col items-start border border-black/5 text-left h-full group">
+                  <div className="rounded-[20px] overflow-hidden mb-4 aspect-video w-full relative">
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-perk-black mb-2 tracking-tighter leading-tight">{card.title}</h3>
+                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-4 flex-grow line-clamp-4">{card.desc}</p>
+                  <Link to={card.href} className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">
+                    Learn more <ChevronRight size={16} />
+                  </Link>
+                </motion.div>
+              ))}
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[300px] border border-black/5" />
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[300px] border border-black/5" />
+            </div>
+          </div>
+
+          {/* ROW 3: 3 blank boxes */}
+          <div className="max-w-[1440px] mx-auto mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[400px] border border-black/5" />
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[400px] border border-black/5" />
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[400px] border border-black/5" />
+            </div>
+          </div>
+
+          {/* ROW 4: Inverted matrix — blank */}
+          <div className="max-w-[1440px] mx-auto mb-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+              <div className="lg:col-span-3 flex flex-col gap-4">
+                <div className="bg-[#f0f0e8] rounded-[25px] flex-1 min-h-[380px] border border-black/5" />
+              </div>
+              <div className="lg:col-span-3 flex flex-col gap-4">
+                <div className="bg-[#f0f0e8] rounded-[25px] flex-1 min-h-[220px] border border-black/5" />
+                <div className="bg-[#f0f0e8] rounded-[25px] flex-1 min-h-[150px] border border-black/5" />
+              </div>
+              <div className="lg:col-span-6 bg-[#f0f0e8] rounded-[25px] min-h-[380px] border border-black/5" />
+            </div>
+          </div>
+
+          {/* ROW 5: 3 blank boxes */}
+          <div className="max-w-[1440px] mx-auto mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pb-12">
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[420px] border border-black/5" />
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[420px] border border-black/5" />
+              <div className="bg-[#f0f0e8] rounded-[25px] min-h-[420px] border border-black/5" />
             </div>
           </div>
 
@@ -440,33 +307,14 @@ const ProductDiscovery = () => {
       )}
 
       {/* =========================================
-          UNIFIED GRID — Persona filtered views
+          BLANK PLACEHOLDER — Persona filtered views
           ========================================= */}
       {activeFilter !== 'All' && (
         <div className="max-w-[1440px] mx-auto pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {productFeatures
-              .filter(f => f.tag === activeFilter)
-              .map((card, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className="bg-[#f0f0e8] rounded-[25px] p-8 flex flex-col items-start border border-black/5 text-left h-full group"
-                >
-                  <div className="rounded-[20px] overflow-hidden mb-8 aspect-video w-full relative z-10">
-                    <img src={card.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 shadow-xl z-20" />
-                    <div className="absolute top-3 left-3 px-3 py-1 bg-brand-lime rounded-md text-[10px] font-bold text-perk-black shadow-sm z-30">{card.tag}</div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent group-hover:bg-black/60 transition-colors duration-500 pointer-events-none z-0" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-perk-black mb-4 tracking-tighter leading-tight">{card.title}</h3>
-                  <p className="text-[13px] text-perk-black/60 font-medium leading-relaxed mb-6 line-clamp-6">{card.desc}</p>
-                  <button className="mt-auto px-6 py-2 bg-transparent border border-perk-black/20 rounded-full text-[13px] font-bold flex items-center gap-1 hover:bg-black/5 transition-colors">
-                    Learn more <ChevronRight size={16} />
-                  </button>
-                </motion.div>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-[#f0f0e8] rounded-[25px] aspect-video border border-black/5" />
+            ))}
           </div>
         </div>
       )}

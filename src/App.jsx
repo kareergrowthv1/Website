@@ -43,6 +43,14 @@ import PressReleases from './pages/media/PressReleases';
 import LegalTerms from './pages/legal/LegalTerms';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 
+// Feature detail pages
+import FeatureDetail from './pages/features/FeatureDetail';
+import MockInterviewDetail from './pages/features/MockInterviewDetail';
+import KareerGrowthHuntDetail from './pages/features/KareerGrowthHuntDetail';
+import TrackerDetail from './pages/features/TrackerDetail';
+import PracticeHubDetail from './pages/features/PracticeHubDetail';
+import CareerPlatformDetail from './pages/features/CareerPlatformDetail';
+
 function App() {
   return (
     <Router>
@@ -89,6 +97,14 @@ function App() {
           {/* Legal routes */}
           <Route path="/legal/terms" element={<LegalTerms />} />
           <Route path="/legal/privacy" element={<PrivacyPolicy />} />
+
+          {/* Feature detail routes */}
+          <Route path="/features/mock-interview" element={<MockInterviewDetail />} />
+          <Route path="/features/kareergrowth-hunt" element={<KareerGrowthHuntDetail />} />
+          <Route path="/features/tracker" element={<TrackerDetail />} />
+          <Route path="/features/practice-hub" element={<PracticeHubDetail />} />
+          <Route path="/features/career-platform" element={<CareerPlatformDetail />} />
+          <Route path="/features/:slug" element={<FeatureDetail />} />
         </Routes>
 
         <Footer />

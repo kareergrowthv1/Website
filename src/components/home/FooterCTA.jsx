@@ -6,45 +6,30 @@ const FooterCTA = () => {
     <section className="bg-black py-32 px-6 overflow-hidden relative">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center text-center relative z-10">
         
-        {/* Floating Badges Container */}
-        <div className="relative w-full max-w-4xl min-h-[120px] mb-8">
-          {/* Top Left: Cyan */}
-          <div className="absolute top-0 -left-4 md:left-20 transform -translate-y-1/2">
-            <div className="bg-[#A5F3FC] px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg">
-              <Calendar size={16} className="text-black" />
-              <span className="text-[13px] font-bold text-black whitespace-nowrap">Founded in 2015</span>
-            </div>
+        {/* Badges — 2×2 grid, small on mobile, larger on desktop */}
+        <div className="grid grid-cols-2 gap-2 mb-8 w-full max-w-xs lg:max-w-md">
+          <div className="bg-[#FBCFE8] px-3 py-2 lg:px-4 lg:py-2.5 rounded-full flex items-center gap-1.5 shadow-md">
+            <Briefcase size={12} className="text-black flex-shrink-0 lg:w-4 lg:h-4" />
+            <span className="text-[11px] lg:text-[13px] font-bold text-black leading-tight">12 offices globally</span>
           </div>
-
-          {/* Top Right: Violet */}
-          <div className="absolute top-4 -right-4 md:right-16 transform -translate-y-1/2">
-            <div className="bg-[#C4B5FD] px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg">
-              <User size={16} className="text-black" />
-              <span className="text-[13px] font-bold text-black whitespace-nowrap">1,800+ employees</span>
-            </div>
+          <div className="bg-[#C4B5FD] px-3 py-2 lg:px-4 lg:py-2.5 rounded-full flex items-center gap-1.5 shadow-md">
+            <User size={12} className="text-black flex-shrink-0 lg:w-4 lg:h-4" />
+            <span className="text-[11px] lg:text-[13px] font-bold text-black leading-tight">1,800+ employees</span>
           </div>
-
-          {/* Bottom Left: Pink */}
-          <div className="absolute bottom-4 left-4 md:left-40">
-            <div className="bg-[#FBCFE8] px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg">
-              <Briefcase size={16} className="text-black" />
-              <span className="text-[13px] font-bold text-black whitespace-nowrap">12 offices globally</span>
-            </div>
+          <div className="bg-[#A5F3FC] px-3 py-2 lg:px-4 lg:py-2.5 rounded-full flex items-center gap-1.5 shadow-md">
+            <Calendar size={12} className="text-black flex-shrink-0 lg:w-4 lg:h-4" />
+            <span className="text-[11px] lg:text-[13px] font-bold text-black leading-tight">Founded in 2015</span>
           </div>
-
-          {/* Bottom Right: Orange */}
-          <div className="absolute bottom-0 right-4 md:right-32">
-            <div className="bg-[#FED7AA] px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg">
-              <Users size={16} className="text-black" />
-              <span className="text-[13px] font-bold text-black whitespace-nowrap">10,000+ customers worldwide</span>
-            </div>
+          <div className="bg-[#FED7AA] px-3 py-2 lg:px-4 lg:py-2.5 rounded-full flex items-center gap-1.5 shadow-md">
+            <Users size={12} className="text-black flex-shrink-0 lg:w-4 lg:h-4" />
+            <span className="text-[11px] lg:text-[13px] font-bold text-black leading-tight">10,000+ customers</span>
           </div>
-
-          {/* The Main Headline */}
-          <h2 className="text-[56px] md:text-[80px] font-bold text-white leading-[0.95] tracking-tighter mt-12 mb-4">
-            Ready to get<br />to work?
-          </h2>
         </div>
+
+        {/* Headline */}
+        <h2 className="text-[48px] md:text-[72px] lg:text-[80px] font-bold text-white leading-[0.95] tracking-tighter mb-8">
+          Ready to get<br />to work?
+        </h2>
 
         {/* Mission Statement */}
         <p className="max-w-2xl text-white/60 text-[18px] md:text-[20px] leading-relaxed font-medium mb-12">
